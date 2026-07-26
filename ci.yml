@@ -1,0 +1,37 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Install
+        run: npm ci
+
+      - name: Build design tokens
+        run: npm run tokens:build
+
+      - name: Validate authored content
+        run: npm run validate:content
+
+      - name: Run tests
+        run: npm test
+
+      - name: Build website
+        run: npm run build:web
+
+      # Fails the build on a known-vulnerable direct dependency. `--production`
+      # keeps development-only advisories from blocking a release.
+      - name: Audit dependencies
+        run: npm audit --audit-level=high --omit=dev
