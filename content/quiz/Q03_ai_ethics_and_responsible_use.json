@@ -1,0 +1,313 @@
+{
+  "module_id": "ai-ethics-and-responsible-use",
+  "module_title": "AI Ethics and Responsible Use of AI-Q",
+  "type": "quiz",
+  "companion_learning": "AI Ethics and Responsible Use of AI-L",
+  "total_questions": 20,
+  "mini_quizzes": [
+    {
+      "mq": 1,
+      "title": "Core AI Ethics Concepts",
+      "questions": [
+        {
+          "q_id": "Q03-MQ1-01",
+          "bloom": "L1 Remember",
+          "stem": "Which term describes a systematic and unfair discrimination in AI outputs that originates from biased training data, problem framing, or evaluation metrics?",
+          "options": {
+            "A": "Overfitting",
+            "B": "AI bias",
+            "C": "Data leakage",
+            "D": "Model drift"
+          },
+          "answer": "B",
+          "explanation": "AI bias refers to systematic, unfair discrimination in AI outputs. It can originate from historical bias in training data, under-representation of certain groups, flawed problem framing, or evaluation metrics that do not capture fairness across subgroups. It is distinct from statistical bias (a modelling term) and from overfitting (a generalisation problem).",
+          "source": "Jobin, Ienca and Vayena. The global landscape of AI ethics guidelines. Nature Machine Intelligence, 1, 2019. Free arXiv preprint: https://arxiv.org/abs/1906.11668 | Buolamwini and Gebru. Gender Shades. PMLR FAccT, 2018. Free: http://proceedings.mlr.press/v81/buolamwini18a.html"
+        },
+        {
+          "q_id": "Q03-MQ1-02",
+          "bloom": "L1 Remember",
+          "stem": "In the Gender Shades study (Buolamwini and Gebru, 2018), what was the approximate error rate range found across demographic groups in commercial facial recognition systems?",
+          "options": {
+            "A": "Error rates were equal across all groups at approximately 15%",
+            "B": "Error rates ranged from 0.7% for lighter-skinned men to 34.7% for darker-skinned women",
+            "C": "Error rates ranged from 1% to 5% across all groups",
+            "D": "Error rates were highest for lighter-skinned women at 45%"
+          },
+          "answer": "B",
+          "explanation": "Buolamwini and Gebru (2018) audited three commercial facial analysis systems and found error rates as low as 0.7% for lighter-skinned men and as high as 34.7% for darker-skinned women --- a nearly 50-fold difference. The root cause was that training datasets were heavily skewed toward lighter-skinned faces, particularly male faces.",
+          "source": "Buolamwini and Gebru. Gender Shades: Intersectional Accuracy Disparities in Commercial Gender Classification. PMLR FAccT, 2018. Free full PDF: http://proceedings.mlr.press/v81/buolamwini18a.html"
+        },
+        {
+          "q_id": "Q03-MQ1-03",
+          "bloom": "L2 Understand",
+          "stem": "How does explainability differ from transparency in the context of AI ethics?",
+          "options": {
+            "A": "They are identical concepts used interchangeably in all AI ethics frameworks",
+            "B": "Transparency refers to openness about how a system works overall; explainability refers to a human-understandable account of why a specific individual decision was made",
+            "C": "Explainability applies only to neural networks; transparency applies only to decision trees",
+            "D": "Transparency means the model is open-source; explainability means the model achieves high accuracy"
+          },
+          "answer": "B",
+          "explanation": "Transparency is the broader concept --- it refers to openness about the system's design, data, training process, and capabilities. Explainability is narrower and decision-specific: it requires that a human can understand why the model made a particular prediction for a particular input. GDPR Article 22 and the EU AI Act both require explainability (not just transparency) for automated decisions affecting individuals.",
+          "source": "European Commission. Ethics Guidelines for Trustworthy AI. HLEG on AI, 2019. Free PDF: https://digital-strategy.ec.europa.eu/en/library/ethics-guidelines-trustworthy-ai | Jobin et al., 2019. https://arxiv.org/abs/1906.11668"
+        },
+        {
+          "q_id": "Q03-MQ1-04",
+          "bloom": "L2 Understand",
+          "stem": "Why is it mathematically impossible to satisfy all fairness definitions simultaneously when base rates differ between groups?",
+          "options": {
+            "A": "Because computers cannot perform the required calculations fast enough",
+            "B": "Because Chouldechova's impossibility theorem proves that calibration, equal false positive rates, and equal false negative rates cannot all hold simultaneously when group base rates differ",
+            "C": "Because fairness definitions were written by different organisations and contain typographical errors",
+            "D": "Because machine learning models cannot process demographic data"
+          },
+          "answer": "B",
+          "explanation": "Chouldechova (2017) formally proved that when two groups have different base rates of an outcome, a model cannot simultaneously satisfy calibration (predicted probabilities match actual outcomes), equal false positive rates, and equal false negative rates. This means choosing which fairness criterion to optimise is unavoidably a values and policy decision --- not a purely technical one.",
+          "source": "Jobin, Ienca and Vayena. Nature Machine Intelligence, 2019. Free: https://arxiv.org/abs/1906.11668 | NIST. AI Risk Management Framework (AI RMF 1.0). 2023. Free: https://airc.nist.gov/RMF"
+        },
+        {
+          "q_id": "Q03-MQ1-05",
+          "bloom": "L3 Apply",
+          "stem": "A hiring algorithm achieves 85% accuracy overall but has a recall rate of 90% for male applicants and 60% for female applicants. Which fairness violation does this represent, and what is the most appropriate first remediation step?",
+          "options": {
+            "A": "This represents a transparency violation; the fix is to publish the model architecture",
+            "B": "This represents an equal opportunity violation (unequal true positive rates across groups); the most appropriate first step is to audit the training data for gender representation and remove or reweight underrepresented examples",
+            "C": "This represents overfitting; the fix is to reduce model complexity",
+            "D": "This is acceptable because overall accuracy is high at 85%"
+          },
+          "answer": "B",
+          "explanation": "Recall (true positive rate) of 90% for men vs 60% for women is an equal opportunity violation --- a qualified female candidate is 50% more likely to be rejected than an equally qualified male candidate. High overall accuracy masks this disparity. The first remediation step is a training data audit: if female applicants are underrepresented or their profiles are systematically different in the data, reweighting or resampling is required before retraining.",
+          "source": "Obermeyer et al. Science, 366(6464), 2019. Free via PubMed: https://pubmed.ncbi.nlm.nih.gov/31649194/ | NIST AI RMF 1.0, 2023. Free: https://airc.nist.gov/RMF | Buolamwini and Gebru, 2018. http://proceedings.mlr.press/v81/buolamwini18a.html"
+        }
+      ]
+    },
+    {
+      "mq": 2,
+      "title": "Bias in AI Systems",
+      "questions": [
+        {
+          "q_id": "Q03-MQ2-01",
+          "bloom": "L1 Remember",
+          "stem": "In the Obermeyer et al. (2019) study on healthcare algorithmic bias, what was used as a proxy for medical need that introduced racial bias?",
+          "options": {
+            "A": "Patient age",
+            "B": "Number of prior hospitalisations",
+            "C": "Healthcare cost",
+            "D": "Distance from the nearest hospital"
+          },
+          "answer": "C",
+          "explanation": "Obermeyer et al. (2019) found that a widely used healthcare algorithm used healthcare cost as a proxy for medical need --- the assumption being that sicker patients generate more costs. However, due to systemic inequalities in healthcare access, Black patients generated lower costs than equally ill white patients. This caused the algorithm to assign lower risk scores to Black patients, resulting in them receiving fewer referrals to care management programs.",
+          "source": "Obermeyer et al. Dissecting racial bias in an algorithm used to manage the health of populations. Science, 366(6464), 2019. Free via PubMed: https://pubmed.ncbi.nlm.nih.gov/31649194/"
+        },
+        {
+          "q_id": "Q03-MQ2-02",
+          "bloom": "L1 Remember",
+          "stem": "At what stage can bias enter an AI pipeline?",
+          "options": {
+            "A": "Only during model training",
+            "B": "Only in the training data collection phase",
+            "C": "At every stage: data collection, feature engineering, model training, evaluation, and deployment",
+            "D": "Only during model deployment in production"
+          },
+          "answer": "C",
+          "explanation": "Bias can enter at every stage of the AI pipeline: (1) Historical bias in the world reflected in data. (2) Representation bias --- underrepresented groups in the dataset. (3) Measurement bias --- proxies that encode discrimination. (4) Aggregation bias --- ignoring subgroup differences. (5) Evaluation bias --- test sets not representative. (6) Deployment bias --- model used in a different context from its training distribution.",
+          "source": "Jobin, Ienca and Vayena. Nature Machine Intelligence, 1, 2019. Free: https://arxiv.org/abs/1906.11668 | Obermeyer et al., Science, 2019. https://pubmed.ncbi.nlm.nih.gov/31649194/"
+        },
+        {
+          "q_id": "Q03-MQ2-03",
+          "bloom": "L2 Understand",
+          "stem": "Explain how a feedback loop amplifies bias in a predictive policing system over time.",
+          "options": {
+            "A": "The system slows down because it processes too much data",
+            "B": "Higher predicted risk in an area leads to more police patrols there, which leads to more arrests recorded there, which increases the area's risk score in the next model update --- a self-fulfilling prophecy that amplifies the original bias",
+            "C": "Officers become less efficient because they rely on the system",
+            "D": "The system predicts fewer crimes over time as the neighbourhood improves"
+          },
+          "answer": "B",
+          "explanation": "This is a classic algorithmic feedback loop: the model flags area A as high-risk \u2192 police patrol area A more \u2192 more arrests in area A (regardless of actual crime rate relative to other areas) \u2192 next model training cycle includes more crime data from area A \u2192 area A gets higher risk score. The loop amplifies the initial bias with each training cycle, making it increasingly difficult to break.",
+          "source": "Jobin, Ienca and Vayena. Nature Machine Intelligence, 1, 2019. Free: https://arxiv.org/abs/1906.11668 | NIST AI RMF 1.0, 2023. https://airc.nist.gov/RMF"
+        },
+        {
+          "q_id": "Q03-MQ2-04",
+          "bloom": "L2 Understand",
+          "stem": "The COMPAS recidivism algorithm was criticised by ProPublica (2016) for unequal false positive rates across racial groups. Defenders argued it was 'calibrated'. How can both claims be mathematically correct?",
+          "options": {
+            "A": "They cannot both be correct; one side must have made an error",
+            "B": "Because calibration and equal false positive rates are different fairness criteria, and Chouldechova's impossibility theorem shows they cannot both be satisfied simultaneously when base recidivism rates differ between groups",
+            "C": "Because ProPublica used a different definition of 'false positive' than the algorithm developers",
+            "D": "Because the algorithm was tested on different populations by each party"
+          },
+          "answer": "B",
+          "explanation": "Both claims are mathematically correct because they measure different things. ProPublica found that Black defendants had a false positive rate of ~45% vs ~23% for white defendants (unequal equal opportunity). Northpointe found that among defendants scored high-risk, recidivism rates were equal across races (calibration). Chouldechova (2017) proved these two criteria cannot simultaneously hold when base rates differ --- and Black and white defendants had different base recidivism rates in the dataset.",
+          "source": "Jobin, Ienca and Vayena. Nature Machine Intelligence, 2019. https://arxiv.org/abs/1906.11668 | ProPublica analysis: https://www.propublica.org/article/machine-bias-risk-assessments-in-criminal-sentencing"
+        },
+        {
+          "q_id": "Q03-MQ2-05",
+          "bloom": "L3 Apply",
+          "stem": "A bank's loan approval model has a 15% false negative rate (incorrectly denying creditworthy applicants) for applicants from Group A and a 35% false negative rate for applicants from Group B. Identify the fairness violation, name the relevant legal framework, and propose two specific mitigations.",
+          "options": {
+            "A": "No violation --- false negatives are expected in any model; no legal framework applies; mitigation is to accept the model as-is",
+            "B": "Equal opportunity violation (unequal true positive rates); relevant frameworks include ECOA (U.S.) and GDPR Article 22 (EU); mitigations: (1) reweight training examples from Group B to reduce the disparity; (2) set a lower decision threshold for Group B and audit quarterly using per-group recall metrics",
+            "C": "Overfitting to Group A training data; relevant framework is HIPAA; mitigation is to collect more data from Group A",
+            "D": "Calibration violation; no legal framework applies to lending; mitigation is to use a simpler model"
+          },
+          "answer": "B",
+          "explanation": "A 15% vs 35% false negative rate is a clear equal opportunity violation --- Group B creditworthy applicants are denied at 2.3x the rate of Group A. In lending, this violates ECOA (Equal Credit Opportunity Act, U.S.) and GDPR Article 22 (EU right not to be subject to automated decisions). Mitigations: (1) Reweight or oversample Group B training examples to reduce representation bias. (2) Set a lower approval threshold for Group B after auditing for disparate impact --- threshold must be calibrated to achieve equal recall.",
+          "source": "Obermeyer et al. Science, 2019. https://pubmed.ncbi.nlm.nih.gov/31649194/ | European Commission. Ethics Guidelines for Trustworthy AI. 2019. https://digital-strategy.ec.europa.eu/en/library/ethics-guidelines-trustworthy-ai | NIST AI RMF 1.0. https://airc.nist.gov/RMF"
+        }
+      ]
+    },
+    {
+      "mq": 3,
+      "title": "EU Trustworthy AI and Governance Frameworks",
+      "questions": [
+        {
+          "q_id": "Q03-MQ3-01",
+          "bloom": "L1 Remember",
+          "stem": "How many requirements does the EU Ethics Guidelines for Trustworthy AI (HLEG, 2019) identify?",
+          "options": {
+            "A": "Four",
+            "B": "Five",
+            "C": "Seven",
+            "D": "Ten"
+          },
+          "answer": "C",
+          "explanation": "The EU High-Level Expert Group on AI (2019) identified seven requirements for Trustworthy AI: (1) Human agency and oversight. (2) Technical robustness and safety. (3) Privacy and data governance. (4) Transparency. (5) Diversity, non-discrimination, and fairness. (6) Societal and environmental wellbeing. (7) Accountability.",
+          "source": "European Commission. Ethics Guidelines for Trustworthy AI. HLEG on AI, 2019. Free official PDF: https://digital-strategy.ec.europa.eu/en/library/ethics-guidelines-trustworthy-ai"
+        },
+        {
+          "q_id": "Q03-MQ3-02",
+          "bloom": "L1 Remember",
+          "stem": "What are the four core functions of the NIST AI Risk Management Framework (AI RMF 1.0, 2023)?",
+          "options": {
+            "A": "Plan, Build, Test, Deploy",
+            "B": "Govern, Map, Measure, Manage",
+            "C": "Identify, Protect, Detect, Respond",
+            "D": "Assess, Mitigate, Monitor, Report"
+          },
+          "answer": "B",
+          "explanation": "The NIST AI RMF 1.0 (2023) organises AI risk management into four core functions: GOVERN (establish culture, policies, and accountability structures), MAP (identify and categorise AI risks in context), MEASURE (analyse and track risks with metrics), MANAGE (prioritise and implement risk mitigations). These functions apply across the AI system lifecycle.",
+          "source": "NIST. AI Risk Management Framework (AI RMF 1.0). 2023. Free official publication: https://airc.nist.gov/RMF"
+        },
+        {
+          "q_id": "Q03-MQ3-03",
+          "bloom": "L2 Understand",
+          "stem": "Why did the EU AI Act (2024) classify real-time public facial recognition as 'unacceptable risk' and ban it (with narrow exceptions)?",
+          "options": {
+            "A": "Because facial recognition cameras are too expensive",
+            "B": "Because real-time public facial recognition enables mass surveillance, chills free assembly and expression, poses disproportionate risks to privacy and civil liberties, and has documented accuracy disparities across demographic groups --- failing all seven EU Trustworthy AI requirements",
+            "C": "Because the technology is not yet accurate enough for any use",
+            "D": "Because there is no commercial demand for it"
+          },
+          "answer": "B",
+          "explanation": "The EU AI Act's unacceptable risk category includes systems that pose a clear threat to fundamental rights. Real-time public facial recognition enables mass surveillance of citizens exercising legal rights (protest, assembly); it has documented accuracy disparities (Gender Shades); it violates privacy and data governance (requirement 3), human agency (requirement 1), and non-discrimination (requirement 5). The Act bans it except for narrow national security exceptions with judicial authorisation.",
+          "source": "European Commission. Ethics Guidelines for Trustworthy AI. 2019. https://digital-strategy.ec.europa.eu/en/library/ethics-guidelines-trustworthy-ai | Jobin, Ienca and Vayena, 2019. https://arxiv.org/abs/1906.11668"
+        },
+        {
+          "q_id": "Q03-MQ3-04",
+          "bloom": "L2 Understand",
+          "stem": "Why does the accuracy-explainability trade-off matter for high-risk AI decisions such as loan approvals or medical diagnosis?",
+          "options": {
+            "A": "It does not matter --- accuracy should always be maximised regardless of explainability",
+            "B": "High-accuracy models (e.g., deep neural networks) are often black boxes --- for high-risk decisions, regulators and affected individuals have a legal right to understand why a decision was made, so deployers may need to accept lower accuracy for an interpretable model or use post-hoc tools like SHAP",
+            "C": "Explainability always produces higher accuracy",
+            "D": "The trade-off only applies to medical systems, not financial systems"
+          },
+          "answer": "B",
+          "explanation": "GDPR Article 22 (EU) and ECOA (U.S.) require that individuals have the right to explanation for automated decisions with significant effects. Deep neural networks may achieve higher accuracy but provide no human-interpretable rationale. Deployers must either: (1) choose an interpretable model (logistic regression, decision tree) accepting some accuracy cost, or (2) use post-hoc explainability tools (SHAP, LIME) to approximate explanations for black-box models.",
+          "source": "European Commission. Ethics Guidelines for Trustworthy AI. 2019. https://digital-strategy.ec.europa.eu/en/library/ethics-guidelines-trustworthy-ai | NIST AI RMF 1.0. https://airc.nist.gov/RMF | Jobin et al., 2019. https://arxiv.org/abs/1906.11668"
+        },
+        {
+          "q_id": "Q03-MQ3-05",
+          "bloom": "L3 Apply",
+          "stem": "Evaluate a hypothetical AI system that automatically screens job applicants and sends rejection emails without human review. Apply the EU Trustworthy AI framework and identify which requirements it violates and what mitigations are required.",
+          "options": {
+            "A": "No requirements are violated if the AI was trained on diverse data",
+            "B": "It violates at minimum: (1) Human agency and oversight --- no human in the loop; (4) Transparency --- applicants do not know AI was used; (7) Accountability --- no human accountable for individual decisions; potentially (5) Non-discrimination --- if bias exists. Mitigations: human review of AI decisions, disclosure to applicants, bias audit, appeals process",
+            "C": "It only violates requirement 3 (Privacy) because applicant data is processed",
+            "D": "Automated screening is explicitly permitted by EU guidelines and requires no mitigations"
+          },
+          "answer": "B",
+          "explanation": "Fully automated rejection without human review violates: (1) Human agency --- EU guidelines require meaningful human oversight for high-stakes decisions; (4) Transparency --- applicants are entitled to know an AI system was used (GDPR Article 22); (7) Accountability --- when an error occurs, no identifiable human is responsible. If bias exists, (5) Non-discrimination is also violated. Required mitigations: a human reviewer must approve final decisions, a mandatory disclosure notice must be sent, a bias audit must be completed before deployment, and an appeals process must be offered.",
+          "source": "European Commission. Ethics Guidelines for Trustworthy AI. HLEG, 2019. https://digital-strategy.ec.europa.eu/en/library/ethics-guidelines-trustworthy-ai | NIST AI RMF 1.0. https://airc.nist.gov/RMF"
+        }
+      ]
+    },
+    {
+      "mq": 4,
+      "title": "Responsible AI in Practice",
+      "questions": [
+        {
+          "q_id": "Q03-MQ4-01",
+          "bloom": "L1 Remember",
+          "stem": "In the NIST AI RMF, which function is responsible for establishing organisational policies, culture, and accountability structures for AI risk management?",
+          "options": {
+            "A": "MAP",
+            "B": "MEASURE",
+            "C": "GOVERN",
+            "D": "MANAGE"
+          },
+          "answer": "C",
+          "explanation": "GOVERN is the foundational function of the NIST AI RMF: it establishes the organisational context for all other risk activities --- including policies, roles and responsibilities, risk appetite, oversight mechanisms, and a culture of responsible AI. Without GOVERN, MAP, MEASURE, and MANAGE lack institutional support and accountability.",
+          "source": "NIST. AI Risk Management Framework (AI RMF 1.0). 2023. Free: https://airc.nist.gov/RMF"
+        },
+        {
+          "q_id": "Q03-MQ4-02",
+          "bloom": "L1 Remember",
+          "stem": "What does SHAP stand for and what does it compute?",
+          "options": {
+            "A": "Supervised Heuristic Analysis Platform; it computes model accuracy",
+            "B": "SHapley Additive exPlanations; it computes each feature's contribution to a specific model prediction using Shapley values from cooperative game theory",
+            "C": "Statistical Hypothesis and Prediction; it computes p-values for model features",
+            "D": "Structured Human-AI Protocol; it audits models for compliance"
+          },
+          "answer": "B",
+          "explanation": "SHAP (SHapley Additive exPlanations, Lundberg and Lee, 2017) uses Shapley values from cooperative game theory to assign each feature a contribution value for a specific prediction. For example, for a loan denial: debt-to-income ratio -0.32 (reduced approval probability by 0.32), credit score -0.18, employment duration -0.12. This satisfies GDPR Article 22 right to explanation requirements.",
+          "source": "NIST AI RMF 1.0, 2023. https://airc.nist.gov/RMF | European Commission. Ethics Guidelines for Trustworthy AI. 2019. https://digital-strategy.ec.europa.eu/en/library/ethics-guidelines-trustworthy-ai"
+        },
+        {
+          "q_id": "Q03-MQ4-03",
+          "bloom": "L2 Understand",
+          "stem": "How does LIME differ from SHAP as a post-hoc explainability method?",
+          "options": {
+            "A": "LIME is more accurate than SHAP for all model types",
+            "B": "LIME fits a locally interpretable surrogate model around a single prediction to approximate the black-box model's behaviour near that input; SHAP computes exact feature attributions using Shapley values with stronger theoretical guarantees",
+            "C": "SHAP only works for tree-based models; LIME works for all models",
+            "D": "They are identical methods with different names"
+          },
+          "answer": "B",
+          "explanation": "LIME (Local Interpretable Model-agnostic Explanations, Ribeiro et al., 2016) perturbs the input and fits a simple interpretable model (e.g., linear regression) locally --- fast but approximate. SHAP uses Shapley values to provide theoretically grounded feature attributions satisfying consistency, local accuracy, and missingness axioms --- more reliable but computationally more expensive. Both are post-hoc (applied after training) and model-agnostic.",
+          "source": "NIST AI RMF 1.0, 2023. https://airc.nist.gov/RMF | European Commission. Ethics Guidelines for Trustworthy AI. 2019. https://digital-strategy.ec.europa.eu/en/library/ethics-guidelines-trustworthy-ai"
+        },
+        {
+          "q_id": "Q03-MQ4-04",
+          "bloom": "L2 Understand",
+          "stem": "Apply the NIST AI RMF MAP function to a medical AI system that predicts sepsis risk from ICU patient vitals. What should the MAP function identify?",
+          "options": {
+            "A": "Only the technical architecture of the neural network",
+            "B": "The deployment context (ICU setting, patient population), stakeholders and affected groups (patients, clinicians, hospital administrators), potential harms (false negatives miss sepsis onset; false positives cause unnecessary treatment), legal obligations (HIPAA, FDA approval), and relevant performance disparities across patient subgroups",
+            "C": "Only the cost of developing the AI system",
+            "D": "Only whether the system passes accuracy benchmarks"
+          },
+          "answer": "B",
+          "explanation": "The MAP function contextualises AI risk: it identifies (1) deployment context and intended use; (2) all stakeholders including those indirectly affected; (3) potential harms --- for sepsis prediction, a false negative (missed sepsis) can cause death, while a false positive causes unnecessary antibiotics (resistance risk, cost). (4) Legal obligations --- FDA 510(k) clearance for clinical decision support, HIPAA for patient data. (5) Potential performance disparities across age, sex, race, comorbidities.",
+          "source": "NIST. AI Risk Management Framework (AI RMF 1.0). 2023. Free: https://airc.nist.gov/RMF"
+        },
+        {
+          "q_id": "Q03-MQ4-05",
+          "bloom": "L3 Apply",
+          "stem": "A content moderation AI flags 8% of posts from Language Group A as violating policy vs 23% of equivalent posts from Language Group B, despite equivalent actual violation rates. Apply the full NIST AI RMF (Govern, Map, Measure, Manage) to address this disparity.",
+          "options": {
+            "A": "Accept the disparity because content moderation is subjective",
+            "B": "GOVERN: appoint responsible AI team; MAP: identify affected communities and legal obligations (disparate impact); MEASURE: compute per-language violation rate, false positive rate, recall; confirm 15-point disparity; MANAGE: audit training data for language representation, retrain with balanced multilingual data, set equal false positive rate threshold, re-audit quarterly",
+            "C": "GOVERN: ignore the issue; MAP: document the disparity; MEASURE: nothing; MANAGE: increase flagging rate for Group A to match Group B",
+            "D": "Use only MEASURE: re-run the model on different data"
+          },
+          "answer": "B",
+          "explanation": "A complete NIST AI RMF response: GOVERN --- appoint AI ethics team, define acceptable per-language performance parity. MAP --- identify affected communities (Language Group B users face 2.9x more false positives), legal exposure (disparate impact), and stakeholder harms (chilling of free expression for Group B). MEASURE --- compute per-language false positive rate, recall, and flag rate; confirm statistical significance of 8% vs 23% gap. MANAGE --- root cause analysis (likely underrepresented Group B in training data), data rebalancing, retrain, set equal false positive rate thresholds, implement quarterly audits.",
+          "source": "NIST AI RMF 1.0, 2023. Free: https://airc.nist.gov/RMF | European Commission. Ethics Guidelines for Trustworthy AI. 2019. https://digital-strategy.ec.europa.eu/en/library/ethics-guidelines-trustworthy-ai"
+        }
+      ]
+    }
+  ]
+}

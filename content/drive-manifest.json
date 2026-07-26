@@ -1,0 +1,232 @@
+{
+  "source": {
+    "folderName": "JSONFILES_CodeWithoutLimitsNET",
+    "folderId": "1uR4xoEfOLAgI1B323dENCwsRl3XExYJi",
+    "owner": "cromain@communitychangers.us",
+    "verifiedAt": "2026-07-23",
+    "fileCount": 21,
+    "note": "Q03 was not reachable in the shared folder and was supplied directly by the curriculum author on 23 July 2026. It now lives in content/quiz/ and is not fetched."
+  },
+  "note": "File ids were read from the shared folder. `target` is the path the fetch script writes to, relative to content/. Files already present in the repository are marked \"inRepo\": true and are not fetched.",
+  "files": [
+    {
+      "id": "13Ayiju2lD0_z1Sw76_b5_f86iofTF5O5",
+      "name": "L01_introduction_to_ai.json",
+      "target": "learning/L01_introduction_to_ai.json",
+      "moduleId": "introduction-to-ai",
+      "kind": "learning"
+    },
+    {
+      "id": "1UhrVO0OLJ0Ig8B1Q6NewF4dRKfzME3wQ",
+      "name": "L02_edtech.json",
+      "target": "learning/L02_edtech.json",
+      "moduleId": "edtech-and-learning-science",
+      "kind": "learning"
+    },
+    {
+      "id": "1Kmz4Mr0vIvFXWWl9GkGQmnvNmDFEs7EO",
+      "name": "L03_ai_ethics.json",
+      "target": "learning/L03_ai_ethics.json",
+      "moduleId": "ai-ethics-and-responsible-use",
+      "kind": "learning"
+    },
+    {
+      "id": "1g4qTV8-cJjubjE933KCnr1ZDfmTgGqp5",
+      "name": "L04_algorithms.json",
+      "target": "learning/L04_algorithms.json",
+      "moduleId": "algorithms-and-data-structures",
+      "kind": "learning"
+    },
+    {
+      "id": "1BSKqcwh3xihJ7AWJTwg8yUUE6D63tPME",
+      "name": "L05_python.json",
+      "target": "learning/L05_python.json",
+      "moduleId": "python-fundamentals",
+      "kind": "learning"
+    },
+    {
+      "id": "1ld5V9G9K2hUwoB65N3-_djEBS3__Jxub",
+      "name": "L06_machine_learning.json",
+      "target": "learning/L06_machine_learning.json",
+      "moduleId": "machine-learning",
+      "kind": "learning"
+    },
+    {
+      "id": "10guHp7ebnZ3nr8UJdMOLoze-MHBwr8on",
+      "name": "L09_ai_in_society_and_the_future.json",
+      "target": "learning/L09b_ai_in_society_and_the_future.json",
+      "moduleId": "ai-in-society-and-the-future",
+      "kind": "learning",
+      "renamed": true,
+      "reason": "Drive name collides with the robotics module, which shares the L09 number. Both are kept: robotics is L09a, AI in Society and the Future is L09b, following the same a/b convention already used for L10a and L10b."
+    },
+    {
+      "id": "1t9g_LOYg-k2taKi0sW99C_DyvWxwiy9c",
+      "name": "Q01_introduction_to_ai.json",
+      "target": "quiz/Q01_introduction_to_ai.json",
+      "moduleId": "introduction-to-ai",
+      "kind": "quiz"
+    },
+    {
+      "id": "1DzkIX10Fjgh-IWfYGggEGD2csV-wIu84",
+      "name": "Q02_edtech.json",
+      "target": "quiz/Q02_edtech.json",
+      "moduleId": "edtech-and-learning-science",
+      "kind": "quiz",
+      "note": "Newer of two identical uploads; the older copy (1FOwOOE2U7WxBsx93TaI6UvaET4WzyZSa) is skipped."
+    },
+    {
+      "id": "1Bxk5AjZktuscAu1efPiDaXHILaxYYjhh",
+      "name": "Q04_python_for_ai.json",
+      "target": "quiz/Q04_python_for_ai.json",
+      "moduleId": "python-fundamentals",
+      "kind": "quiz"
+    },
+    {
+      "id": "1eh99ZryLYl-YpMrekNdOOX0LBm6NTYrO",
+      "name": "Q05_ml_fundamentals.json",
+      "target": "quiz/Q05_ml_fundamentals.json",
+      "moduleId": "machine-learning",
+      "kind": "quiz"
+    },
+    {
+      "id": "1DQoztHD3Ps9hK3e8cMqO3biNuWOlpsY-",
+      "name": "Q06_neural_networks.json",
+      "target": "quiz/Q06_neural_networks.json",
+      "moduleId": "neural-networks-and-deep-learning",
+      "kind": "quiz"
+    },
+    {
+      "id": "1nY27cxFIfsBgE_7FH9kzr0ZLvWWkis58",
+      "name": "Q07_nlp.json",
+      "target": "quiz/Q07_nlp.json",
+      "moduleId": "natural-language-processing",
+      "kind": "quiz"
+    },
+    {
+      "id": "1C4lxXG1XKBYugYs7BJnVkQq9IeJHVURj",
+      "name": "Q08_computer_vision.json",
+      "target": "quiz/Q08_computer_vision.json",
+      "moduleId": "computer-vision",
+      "kind": "quiz"
+    },
+    {
+      "id": "16SJvXy-1YUc-ehQrQkAB78nPlfmO4_W3",
+      "name": "Q09_ai_healthcare.json",
+      "target": "quiz/Q09_ai_healthcare.json",
+      "moduleId": "ai-in-healthcare",
+      "kind": "quiz"
+    },
+    {
+      "id": "14wiZrtP1PC7Z0TLlR308lzwvteWUC-fl",
+      "name": "Q10_ai_business.json",
+      "target": "quiz/Q10_ai_business.json",
+      "moduleId": "ai-in-business",
+      "kind": "quiz"
+    },
+    {
+      "id": "1DRfQ5NMgdBR0pt1yDFProtP7jBPgGSG3",
+      "name": "Q10a_generative_ai_llms.json",
+      "target": "quiz/Q10a_generative_ai_llms.json",
+      "moduleId": "generative-ai-and-llms",
+      "kind": "quiz"
+    },
+    {
+      "id": "1g8aNuWOHYVnP8jffiJRdYcK0p105mlDF",
+      "name": "Q10b1_html_beginner.json",
+      "target": "quiz/Q10b1_html_beginner.json",
+      "moduleId": "html-beginner",
+      "kind": "quiz"
+    },
+    {
+      "id": "1CYBC73i7J7LmlNsap1n68ZkeAaMSS7QK",
+      "name": "Q10b2_html_intermediate.json",
+      "target": "quiz/Q10b2_html_intermediate.json",
+      "moduleId": "html-intermediate",
+      "kind": "quiz"
+    },
+    {
+      "id": "1wx3o_Et1CIVXbbWdbvk6_URpSmoZvAc9",
+      "name": "Q10b3_html_advanced.json",
+      "target": "quiz/Q10b3_html_advanced.json",
+      "moduleId": "html-advanced",
+      "kind": "quiz"
+    }
+  ],
+  "skipped": [
+    {
+      "id": "1FOwOOE2U7WxBsx93TaI6UvaET4WzyZSa",
+      "name": "Q02_edtech.json",
+      "reason": "Byte-identical duplicate of the newer Q02_edtech.json upload."
+    }
+  ],
+  "gaps": [
+    {
+      "resolved": "Q03 (AI Ethics quiz)",
+      "note": "Supplied directly rather than through Drive. Present at content/quiz/Q03_ai_ethics_and_responsible_use.json."
+    },
+    {
+      "missing": "Quiz for algorithms-and-data-structures",
+      "impact": "L04 has lessons but no companion quiz in the folder."
+    },
+    {
+      "missing": "Quiz for robotics-and-autonomous-systems (Q09a)",
+      "impact": "L09a has lessons but no companion quiz in the folder."
+    },
+    {
+      "missing": "Quiz for ai-in-society-and-the-future (Q09b)",
+      "impact": "L09b has lessons but no companion quiz in the folder. The module names 'AI in Society and the Future-Q' as its companion_quiz, so the file is expected but was not present."
+    },
+    {
+      "missing": "Learning modules for computer-vision, ai-in-healthcare, ai-in-business",
+      "impact": "Q08, Q09 and Q10 are quizzes with no companion learning module."
+    },
+    {
+      "missing": "Catalogue entries for ai-in-society-and-the-future, generative-ai-and-llms, html-beginner, html-intermediate, html-advanced",
+      "impact": "catalogue.json lists 9 modules. These five ingest and are readable, but their cards carry no tagline, description or what_you_learn list."
+    }
+  ],
+  "dialects": {
+    "note": "Two quiz dialects exist in the corpus and both are supported. Files are normalised on ingest by apps/api/src/schemas/normalize.js; the authored JSON is never rewritten.",
+    "canonical": {
+      "example": "Q01_introduction_to_ai.json",
+      "carries": [
+        "difficulty",
+        "skill",
+        "source_lesson",
+        "superquiz_pool",
+        "bloom_distribution",
+        "table_of_contents",
+        "totals"
+      ],
+      "bloom_format": "bare code, e.g. L1"
+    },
+    "compact": {
+      "example": "Q03_ai_ethics_and_responsible_use.json",
+      "omits": [
+        "difficulty",
+        "skill",
+        "source_lesson",
+        "superquiz_pool",
+        "bloom_distribution",
+        "table_of_contents",
+        "totals"
+      ],
+      "uses_instead": {
+        "total_questions": "alias for totals.questions"
+      },
+      "bloom_format": "long-form label, e.g. 'L1 Remember'",
+      "inference": "difficulty inherits from the companion learning module, then the catalogue entry; everything else is derived from the questions present"
+    }
+  },
+  "naming": {
+    "convention": "A numeric prefix orders the curriculum; a letter suffix distinguishes sibling modules that sit at the same point in the sequence.",
+    "pairs": {
+      "L09a / Q09a": "robotics-and-autonomous-systems",
+      "L09b / Q09b": "ai-in-society-and-the-future",
+      "L10a / Q10a": "generative-ai-and-llms",
+      "L10b1-3 / Q10b1-3": "html-beginner, html-intermediate, html-advanced"
+    },
+    "note": "File names are for humans. Ingestion reads every *.json in content/learning and content/quiz and keys off module_id, so renaming a file never changes what is stored or what a URL resolves to."
+  }
+}

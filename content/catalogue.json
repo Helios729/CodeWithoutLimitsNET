@@ -1,0 +1,173 @@
+[
+  {
+    "id": "introduction-to-ai",
+    "title": "Introduction to AI-L",
+    "tagline": "Build a strong foundation in artificial intelligence concepts, history, and applications.",
+    "difficulty": "Beginner",
+    "duration_min": 90,
+    "price_cents": 0,
+    "thumb": "/thumbs/introduction-to-ai.png",
+    "description": "Artificial intelligence (AI) is a branch of computer science focused on building systems that perform tasks associated with human cognition: perception, reasoning, learning, planning, and language understanding. Students begin with foundational vocabulary — intelligence, agent, environment, rationality, and autonomy — then survey the major subfields of AI, including machine learning, natural language processing, computer vision, robotics, expert systems, and planning. Historical milestones include Alan Turing's 1950 proposal of the imitation game, the 1956 Dartmouth Conference, two AI winters, the rise of statistical machine learning in the 1990s, and the deep learning revolution beginning around 2012. Students compare narrow AI with AGI and examine AI applications across education, health care, transportation, scientific research, media, finance, and public safety.",
+    "what_you_learn": [
+      "Define artificial intelligence and identify its major subfields.",
+      "Recognize key milestones in the historical development of AI.",
+      "Differentiate symbolic AI, machine learning, and generative AI approaches.",
+      "Compare narrow AI and broader conceptions of artificial general intelligence.",
+      "Interpret real-world AI use cases across multiple sectors.",
+      "Apply introductory AI reasoning to simple design scenarios."
+    ],
+    "affiliate_url": "https://ocw.mit.edu/courses/res-6-013-ai-101-fall-2021/"
+  },
+  {
+    "id": "edtech-and-learning-science",
+    "title": "EdTech and Learning Science-L",
+    "tagline": "Connect educational technology design with evidence-based learning science.",
+    "difficulty": "Beginner",
+    "duration_min": 90,
+    "price_cents": 0,
+    "thumb": "/thumbs/edtech-learning-science.png",
+    "description": "Educational technology (EdTech) refers to the design, development, and use of digital tools, platforms, and media to support teaching and learning. This module grounds EdTech decisions in learning science — the interdisciplinary study of how people learn, drawing on cognitive psychology, neuroscience, instructional design, and educational research. Core concepts include Bloom's Taxonomy, cognitive load theory, retrieval practice, spaced repetition, interleaving, feedback timing, formative versus summative assessment, metacognition, motivation, self-regulation, and Universal Design for Learning (UDL). Application tasks require students to write a learning objective using Bloom's action verbs, align an activity to an outcome, and critique an EdTech feature using evidence-based instructional principles.",
+    "what_you_learn": [
+      "Define educational technology and core learning science concepts.",
+      "Identify how Bloom's Taxonomy informs curriculum and assessment design.",
+      "Explain the role of cognitive load, retrieval practice, and feedback in learning.",
+      "Compare synchronous, asynchronous, blended, and adaptive learning models.",
+      "Evaluate an EdTech tool using evidence-based instructional criteria.",
+      "Design learning objectives and activities aligned with sound pedagogy."
+    ],
+    "affiliate_url": "https://www.unesco.org/en/digital-education/artificial-intelligence"
+  },
+  {
+    "id": "ai-ethics-and-responsible-use",
+    "title": "AI Ethics and Responsible Use of AI-L",
+    "tagline": "Study ethical, legal, and societal responsibilities in the design and use of AI.",
+    "difficulty": "Intermediate",
+    "duration_min": 95,
+    "price_cents": 0,
+    "thumb": "/thumbs/ai-ethics.png",
+    "description": "AI ethics is the study of moral principles, governance frameworks, and practical standards guiding the design, deployment, and oversight of artificial intelligence systems. This module introduces the major principles responsible AI must embody: fairness, transparency, explainability, accountability, privacy, safety, security, inclusivity, sustainability, and human oversight. Students study how bias enters AI systems and examine documented cases of algorithmic harm. Leading frameworks: UNESCO Recommendation on the Ethics of AI (2021), NIST AI RMF 1.0 (2023), ACM Code of Ethics (2018), and ACM TPC Statement on Principles for Responsible Algorithmic Systems (2022).",
+    "what_you_learn": [
+      "Define major principles in AI ethics and responsible use.",
+      "Identify common sources of algorithmic bias and harm.",
+      "Explain transparency, accountability, privacy, and human oversight in AI systems.",
+      "Compare leading ethical and governance frameworks for AI.",
+      "Assess AI use cases for fairness, safety, and trustworthiness.",
+      "Propose mitigation strategies for real-world AI risks."
+    ],
+    "affiliate_url": "https://www.nist.gov/itl/ai-risk-management-framework"
+  },
+  {
+    "id": "algorithms-and-data-structures",
+    "title": "Algorithms and Data Structures-L",
+    "tagline": "Learn how computational problems are represented, organized, and solved efficiently.",
+    "difficulty": "Intermediate",
+    "duration_min": 100,
+    "price_cents": 0,
+    "thumb": "/thumbs/algorithms-data-structures.png",
+    "description": "An algorithm is a finite, well-defined sequence of steps for solving a computational problem. A data structure is a scheme for organizing and storing data to enable efficient access and modification. This module introduces arrays, linked lists, stacks, queues, hash tables, binary search trees, heaps, and graphs. Core algorithms include linear search, binary search, merge sort, quicksort, depth-first search, breadth-first search, Dijkstra, and dynamic programming. The module also introduces recursion, divide-and-conquer, greedy algorithms, and Big-O notation. Application tasks require students to trace algorithms, calculate time complexity, and select appropriate data structures for defined scenarios. Sources: MIT OCW 6.006 Introduction to Algorithms, Spring 2020; Cormen et al., Introduction to Algorithms (CLRS), 4th ed., MIT Press, 2022.",
+    "what_you_learn": [
+      "Define core data structures and algorithmic paradigms.",
+      "Interpret Big-O notation for common operations.",
+      "Explain how searching and sorting algorithms operate.",
+      "Compare data structures based on use case and efficiency.",
+      "Trace algorithm execution on sample inputs.",
+      "Choose and apply suitable structures and algorithms to concrete problems."
+    ],
+    "affiliate_url": "https://ocw.mit.edu/courses/6-006-introduction-to-algorithms-spring-2020/"
+  },
+  {
+    "id": "python-fundamentals",
+    "title": "Python-L",
+    "tagline": "Master Python programming for AI, data science, and real-world problem solving.",
+    "difficulty": "Beginner",
+    "duration_min": 90,
+    "price_cents": 0,
+    "thumb": "/thumbs/python.png",
+    "description": "Python is the dominant programming language in artificial intelligence, machine learning, and data science. This module introduces Python from first principles: variables, expressions, operators, data types, control flow, functions, and the four primary built-in data structures — lists, tuples, dictionaries, and sets. The module covers list comprehensions, lambda functions, exception handling, file I/O, modules, and object-oriented programming fundamentals. Students are introduced to NumPy, Pandas, and Matplotlib. Application tasks ask students to write data-processing functions, load and summarize CSV files, and produce labeled charts. Sources: MIT OCW 6.100L, Fall 2022; Python Software Foundation (docs.python.org).",
+    "what_you_learn": [
+      "Write and run Python code using variables, expressions, loops, and conditionals.",
+      "Define functions and use Python's built-in data structures effectively.",
+      "Interpret and debug common Python code patterns.",
+      "Compare mutable and immutable data types and explain why the distinction matters.",
+      "Read from files and organize simple data-processing tasks.",
+      "Apply Python to authentic AI and educational computing scenarios."
+    ],
+    "affiliate_url": "https://ocw.mit.edu/courses/6-100l-introduction-to-cs-and-programming-using-python-fall-2022/"
+  },
+  {
+    "id": "machine-learning",
+    "title": "Machine Learning-L",
+    "tagline": "Understand how systems learn from data to make predictions, decisions, and discoveries.",
+    "difficulty": "Intermediate",
+    "duration_min": 100,
+    "price_cents": 0,
+    "thumb": "/thumbs/machine-learning.png",
+    "description": "Machine learning (ML) is the branch of AI concerned with systems that improve performance through experience. Three major paradigms: supervised learning, unsupervised learning, and reinforcement learning. Core concepts include datasets, features, labels, training/validation/test splits, loss functions, gradient descent, overfitting, regularization, cross-validation, and hyperparameter tuning. Algorithms: linear regression, logistic regression, k-NN, decision trees, random forests, SVMs, k-means, and PCA. Evaluation metrics: accuracy, precision, recall, F1 score, ROC-AUC, and MSE. Sources: Stanford CS229; MIT OCW 6.036.",
+    "what_you_learn": [
+      "Define core machine learning paradigms and workflows.",
+      "Identify the roles of data, features, labels, and model evaluation.",
+      "Explain overfitting, generalization, and optimization in model training.",
+      "Compare regression, classification, clustering, and reinforcement learning tasks.",
+      "Interpret common evaluation metrics and outputs.",
+      "Apply model-selection reasoning to practical scenarios."
+    ],
+    "affiliate_url": "https://cs229.stanford.edu/"
+  },
+  {
+    "id": "neural-networks-and-deep-learning",
+    "title": "Neural Networks and Deep Learning-L",
+    "tagline": "Explore modern neural architectures that power vision, language, and generative AI.",
+    "difficulty": "Advanced",
+    "duration_min": 90,
+    "price_cents": 0,
+    "thumb": "/thumbs/neural-networks-deep-learning.png",
+    "description": "Deep learning is a family of machine learning methods based on artificial neural networks with many layers. This module covers the mathematical model of a neuron, multilayer perceptrons, forward propagation, backpropagation, SGD, Adam, dropout, batch normalization, CNNs, RNNs, LSTMs, and the Transformer architecture (self-attention, positional encoding, BERT, GPT). Sources: MIT 6.S191; Goodfellow, Bengio & Courville, Deep Learning, MIT Press 2016.",
+    "what_you_learn": [
+      "Define the major components of a neural network.",
+      "Explain how forward propagation and backpropagation support learning.",
+      "Interpret the role of activation functions, loss, and optimization.",
+      "Compare feedforward, convolutional, and recurrent architectures.",
+      "Analyze advantages and limitations of deep learning systems.",
+      "Apply neural-network reasoning to structured examples and scenarios."
+    ],
+    "affiliate_url": "https://introtodeeplearning.com/"
+  },
+  {
+    "id": "natural-language-processing",
+    "title": "Natural Language Processing-L",
+    "tagline": "Learn how AI systems analyze, represent, and generate human language.",
+    "difficulty": "Advanced",
+    "duration_min": 90,
+    "price_cents": 0,
+    "thumb": "/thumbs/nlp.png",
+    "description": "NLP enables computers to understand, interpret, and generate human language. Topics: tokenization, normalization, POS tagging, NER, syntactic parsing, bag-of-words, TF-IDF, word embeddings, n-gram language models, Transformer architecture, BERT, GPT, text classification, machine translation, summarization, question answering, fine-tuning, prompt engineering, retrieval-augmented generation, and LLM limitations. Sources: Stanford CS224N; Jurafsky & Martin, Speech and Language Processing, 3rd ed.",
+    "what_you_learn": [
+      "Define core NLP concepts and common language-processing tasks.",
+      "Explain tokenization, embeddings, and contextual language representation.",
+      "Compare classic NLP methods with transformer-based approaches.",
+      "Interpret model behavior in classification, extraction, and generation tasks.",
+      "Analyze strengths and limitations of NLP systems in real settings.",
+      "Apply NLP reasoning to practical text and language problems."
+    ],
+    "affiliate_url": "https://web.stanford.edu/class/cs224n/"
+  },
+  {
+    "id": "robotics-and-autonomous-systems",
+    "title": "Robotics & Autonomous Systems-L",
+    "tagline": "Study intelligent machines that sense, plan, act, and adapt in physical environments.",
+    "difficulty": "Advanced",
+    "duration_min": 90,
+    "price_cents": 0,
+    "thumb": "/thumbs/robotics-autonomous-systems.png",
+    "description": "Robotics combines mechanical engineering, electrical engineering, computer science, and AI to design machines that sense, reason, and act. Topics: hardware components, PID control, ROS, kinematics, odometry, particle filter localization, occupancy grid mapping, SLAM, A*, Dijkstra, RRT, RRT*, Kalman filter sensor fusion, human-robot interaction, IEEE safety standards, and ethical responsibilities of autonomous deployment. Sources: IEEE Autonomous and Intelligent Systems Standards; MIT OCW 6.832 Underactuated Robotics.",
+    "what_you_learn": [
+      "Define the major components of a robotic or autonomous system.",
+      "Explain sensing, control, planning, and feedback in robotic behavior.",
+      "Compare open-loop and closed-loop approaches to system control.",
+      "Interpret navigation, localization, and path-planning concepts.",
+      "Analyze safety, reliability, and ethical considerations in autonomy.",
+      "Apply robotic reasoning to real-world operational scenarios."
+    ],
+    "affiliate_url": "https://standards.ieee.org/initiatives/autonomous-intelligence-systems/"
+  }
+]
