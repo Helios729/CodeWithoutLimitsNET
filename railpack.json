@@ -1,0 +1,21 @@
+{
+  "$schema": "https://railpack.com/schema.json",
+  "provider": "node",
+  "buildAptPackages": [],
+  "steps": {
+    "install": {
+      "commands": [
+        "npm ci --include-workspace-root || npm install --include-workspace-root"
+      ]
+    },
+    "build": {
+      "inputs": [{ "step": "install" }],
+      "commands": [
+        "npm run tokens:build"
+      ]
+    }
+  },
+  "deploy": {
+    "startCommand": "node apps/api/src/index.js"
+  }
+}

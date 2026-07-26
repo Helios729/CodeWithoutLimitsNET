@@ -36,13 +36,31 @@ railway run node -e "
 
 ## 2. API on Railway
 
+Railway's current builder is Railpack. It looks at the repository root for a start command, which
+is why the important pieces live there: a `start` script in the root `package.json`, a
+`railpack.json` describing the build, and a `railway.json` with the deploy settings. An earlier
+version of this repo put the config under `apps/api/`, where the root-level builder never saw it;
+if you are upgrading from that, make sure the two `*.json` files sit at the repository root.
+
 1. Create a project and add a service pointed at this repository.
-2. Root directory: the repository root. `railway.json` supplies the build and start commands.
+2. Root directory: the repository root (leave it as `/`). Do not set it to `apps/api`; the build
+   needs the workspace root to resolve the `@cwl/tokens` package.
 3. Set the service variables listed in `apps/api/.env.example`. Railway injects `PORT`; do not
-   override it.
+   override it. **The service will refuse to start until `MONGODB_URI`, `JWT_ACCESS_SECRET` and
+   `JWT_REFRESH_SECRET` are set** — this is deliberate, and the logs name whichever one is missing.
 4. Add a custom domain, `api.codewithoutlimits.net`, and create the CNAME Railway shows you.
 5. The healthcheck path is `/api/health`. It returns 503 while MongoDB is unreachable, so a bad
    deploy fails its healthcheck rather than serving errors.
+
+**How the build runs.** On install, a `postinstall` script generates the design-token CSS
+(`packages/tokens/dist/tokens.css`) so the API has it at runtime. The start command is
+`node apps/api/src/index.js`. Both are declared in the root `package.json` and mirrored in
+`railpack.json`, so Railpack detects them without any dashboard configuration.
+
+**If the build still reports "No start command detected":** it is reading a cached commit. Confirm
+the root `package.json` has `"start": "node apps/api/src/index.js"` and redeploy. The `Dockerfile`
+under `apps/api/` remains as an alternative if you ever prefer to switch the service's builder to
+Dockerfile in the Railway settings; Railpack ignores it.
 
 **Variables that matter most**
 
