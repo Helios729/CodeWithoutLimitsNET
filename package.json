@@ -4,15 +4,24 @@
   "private": true,
   "description": "Code Without Limits - dual-platform learning asset (codewithoutlimits.net)",
   "license": "UNLICENSED",
-  "workspaces": ["packages/*", "apps/api", "apps/web"],
-  "engines": { "node": ">=20.0.0" },
+  "workspaces": [
+    "packages/*",
+    "apps/api",
+    "apps/web"
+  ],
+  "engines": {
+    "node": ">=20.0.0"
+  },
   "scripts": {
+    "start": "node apps/api/src/index.js",
     "tokens:build": "npm run build -w @cwl/tokens",
     "dev:api": "npm run dev -w @cwl/api",
     "dev:web": "npm run dev -w @cwl/web",
     "build:web": "npm run tokens:build && npm run build -w @cwl/web",
     "ingest": "npm run ingest -w @cwl/api",
     "validate:content": "npm run validate:content -w @cwl/api",
-    "test": "npm test -w @cwl/api"
-  }
+    "test": "npm test -w @cwl/api",
+    "postinstall": "npm run tokens:build"
+  },
+  "main": "apps/api/src/index.js"
 }
