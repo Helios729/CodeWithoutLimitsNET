@@ -1,0 +1,17 @@
+{
+  "name": "@cwl/tokens",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Shared Desert Modernism design tokens for Code Without Limits (app + web).",
+  "main": "src/index.js",
+  "exports": {
+    ".": "./src/index.js",
+    "./tokens.json": "./src/tokens.json",
+    "./tokens.css": "./dist/tokens.css"
+  },
+  "files": ["src", "dist"],
+  "scripts": {
+    "build": "node build.mjs"
+  }
+}
