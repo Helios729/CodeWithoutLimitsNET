@@ -1,0 +1,89 @@
+/* Desert Modernism - global stylesheet.
+   Every colour, radius and space value below resolves to a token from
+   @cwl/tokens. No literal hex values are permitted in this file. */
+
+@import '@cwl/tokens/tokens.css';
+
+*,
+*::before,
+*::after { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  background: var(--color-background-primary);
+  color: var(--color-text-primary);
+  font-family: var(--font-body);
+  font-size: 1rem;
+  line-height: var(--leading-body);
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-display);
+  font-weight: 600;
+  letter-spacing: var(--tracking-display);
+  color: var(--color-text-primary);
+  margin: 0 0 var(--space-3);
+  line-height: 1.15;
+}
+
+h1 { font-size: clamp(2rem, 5vw, var(--type-h1)); }
+h2 { font-size: clamp(1.5rem, 3.5vw, var(--type-h2)); }
+h3 { font-size: var(--type-h3); }
+h4 { font-size: var(--type-h4); }
+
+p { margin: 0 0 var(--space-4); color: var(--color-text-secondary); }
+a { color: var(--color-brand-primary); text-decoration-thickness: 1px; text-underline-offset: 3px; }
+a:hover { color: var(--color-brand-primary-active); }
+
+/* Focus is never signalled by colour alone (PRD section 8): the ring is a
+   visible outline that reads against both sand surfaces. */
+:focus-visible {
+  outline: 3px solid var(--color-brand-primary);
+  outline-offset: 2px;
+  border-radius: var(--radius-sm);
+}
+
+.skip-link {
+  position: absolute;
+  left: var(--space-4);
+  top: calc(-1 * var(--space-8));
+  z-index: 100;
+  background: var(--color-brand-primary);
+  color: var(--color-on-brand);
+  padding: var(--space-3) var(--space-4);
+  border-radius: var(--radius-pill);
+  transition: top var(--motion-fast) var(--motion-ease);
+}
+.skip-link:focus { top: var(--space-4); color: var(--color-on-brand); }
+
+.shell { max-width: 1180px; margin: 0 auto; padding: 0 var(--space-5); }
+.stack > * + * { margin-top: var(--space-4); }
+
+.overline {
+  font-family: var(--font-display);
+  font-size: var(--type-overline);
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--color-brand-primary);
+  margin: 0 0 var(--space-2);
+}
+
+.muted { color: var(--color-text-secondary); }
+.small { font-size: var(--type-caption); }
+.visually-hidden {
+  position: absolute; width: 1px; height: 1px; overflow: hidden;
+  clip: rect(0 0 0 0); clip-path: inset(50%); white-space: nowrap;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

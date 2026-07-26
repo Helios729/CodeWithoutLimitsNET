@@ -1,0 +1,40 @@
+{
+  "name": "@cwl/api",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Code Without Limits API - Express + MongoDB, deployed on Railway.",
+  "main": "src/index.js",
+  "engines": { "node": ">=20.0.0" },
+  "scripts": {
+    "start": "node src/index.js",
+    "dev": "node --watch src/index.js",
+    "ingest": "node src/scripts/ingest.js",
+    "validate:content": "node src/scripts/validate-content.js",
+    "create-admin": "node src/scripts/create-admin.js",
+    "test": "node --test tests/*.test.js"
+  },
+  "dependencies": {
+    "@cwl/tokens": "*",
+    "argon2": "^0.41.1",
+    "compression": "^1.7.5",
+    "cookie-parser": "^1.4.7",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "express-mongo-sanitize": "^2.2.0",
+    "express-rate-limit": "^7.5.0",
+    "helmet": "^8.0.0",
+    "hpp": "^0.2.3",
+    "jsonwebtoken": "^9.0.2",
+    "mongoose": "^8.9.5",
+    "pino": "^9.6.0",
+    "pino-http": "^10.4.0",
+    "rate-limit-mongo": "^2.3.2",
+    "zod": "^3.24.1"
+  },
+  "devDependencies": {
+    "mongodb-memory-server": "^10.1.3",
+    "supertest": "^7.0.0"
+  }
+}

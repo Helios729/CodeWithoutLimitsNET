@@ -1,0 +1,161 @@
+/* Component styling, matched one-to-one with PRD section 5 so the web and the
+   native app render the same shapes. */
+
+/* --- Buttons --- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  font-family: var(--font-display);
+  font-size: 1rem;
+  font-weight: 500;
+  padding: var(--space-3) var(--space-5);
+  border-radius: var(--radius-pill);
+  border: 1px solid transparent;
+  cursor: pointer;
+  text-decoration: none;
+  min-height: 44px; /* touch target floor */
+  transition: background var(--motion-fast) var(--motion-ease),
+              transform var(--motion-fast) var(--motion-ease);
+}
+.btn:disabled { opacity: 0.55; cursor: not-allowed; }
+.btn:not(:disabled):active { transform: translateY(1px); }
+
+.btn-primary { background: var(--color-brand-primary); color: var(--color-on-brand); }
+.btn-primary:hover:not(:disabled) { background: var(--color-brand-primary-active); color: var(--color-on-brand); }
+.btn-primary:active:not(:disabled) { background: var(--color-brand-primary-active); }
+
+.btn-secondary {
+  background: var(--color-background-primary);
+  border-color: var(--color-border-subtle);
+  color: var(--color-text-primary);
+}
+.btn-secondary:hover:not(:disabled) { background: var(--color-accent-warm); color: var(--color-text-primary); }
+
+.btn-quiet { background: transparent; color: var(--color-brand-primary); padding-inline: var(--space-3); }
+.btn-block { width: 100%; }
+
+/* --- Card --- */
+.card {
+  background: var(--color-background-secondary);
+  border: 1px solid var(--color-border-subtle);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-card);
+  padding: var(--space-5);
+}
+.card-link { display: block; text-decoration: none; color: inherit; transition: box-shadow var(--motion-base) var(--motion-ease), transform var(--motion-base) var(--motion-ease); }
+.card-link:hover { box-shadow: var(--shadow-raised); transform: translateY(-2px); color: inherit; }
+
+/* --- Input --- */
+.field { display: block; margin-bottom: var(--space-4); }
+.field-label {
+  display: block;
+  font-family: var(--font-display);
+  font-size: var(--type-caption);
+  font-weight: 500;
+  color: var(--color-text-primary);
+  margin-bottom: var(--space-2);
+}
+.input {
+  width: 100%;
+  background: var(--color-background-secondary);
+  border: 1px solid var(--color-border-subtle);
+  border-radius: var(--radius-md);
+  padding: var(--space-3) var(--space-4);
+  font-family: var(--font-body);
+  font-size: 1rem;
+  color: var(--color-text-primary);
+  min-height: 44px;
+}
+.input:focus { border-color: var(--color-brand-primary); outline-offset: 1px; }
+.input[aria-invalid='true'] { border-color: var(--color-danger); border-width: 2px; }
+.field-hint { display: block; font-size: var(--type-caption); color: var(--color-text-secondary); margin-top: var(--space-2); }
+.field-error { display: block; font-size: var(--type-caption); color: var(--color-danger); margin-top: var(--space-2); font-weight: 500; }
+
+/* --- Meter (Mountain Grey, PRD section 5) --- */
+.meter {
+  height: 10px;
+  background: var(--color-border-subtle);
+  border-radius: var(--radius-pill);
+  overflow: hidden;
+}
+.meter-fill {
+  height: 100%;
+  background: var(--color-brand-secondary);
+  border-radius: var(--radius-pill);
+  transition: width var(--motion-slow) var(--motion-ease);
+}
+
+/* --- Badges --- */
+.badge {
+  display: inline-block;
+  font-family: var(--font-display);
+  font-size: var(--type-overline);
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: var(--space-1) var(--space-3);
+  border-radius: var(--radius-pill);
+  border: 1px solid var(--color-border-subtle);
+  background: var(--color-background-primary);
+  color: var(--color-text-secondary);
+}
+.badge-success { background: var(--color-success); border-color: var(--color-success); color: var(--color-on-brand); }
+.badge-danger { background: var(--color-danger); border-color: var(--color-danger); color: var(--color-on-brand); }
+
+/* --- Quiz options ---
+   Correctness is carried by a text label and a shape change as well as by
+   colour, so the answer is still legible without colour perception. */
+.option {
+  display: flex;
+  gap: var(--space-3);
+  align-items: flex-start;
+  width: 100%;
+  text-align: left;
+  background: var(--color-background-secondary);
+  border: 1px solid var(--color-border-subtle);
+  border-radius: var(--radius-md);
+  padding: var(--space-4);
+  margin-bottom: var(--space-3);
+  cursor: pointer;
+  font-family: var(--font-body);
+  font-size: 1rem;
+  color: var(--color-text-primary);
+  transition: border-color var(--motion-fast) var(--motion-ease), background var(--motion-fast) var(--motion-ease);
+}
+.option:hover:not(:disabled) { background: var(--color-accent-warm); }
+.option[aria-pressed='true'] { border-color: var(--color-brand-primary); border-width: 2px; background: var(--color-accent-warm); }
+.option-correct { border-color: var(--color-success); border-width: 2px; }
+.option-incorrect { border-color: var(--color-danger); border-width: 2px; }
+.option-key {
+  flex: 0 0 auto;
+  font-family: var(--font-display);
+  font-weight: 600;
+  width: 26px; height: 26px;
+  display: grid; place-items: center;
+  border-radius: var(--radius-pill);
+  background: var(--color-background-primary);
+  border: 1px solid var(--color-border-subtle);
+  font-size: var(--type-caption);
+}
+.option-verdict { font-family: var(--font-display); font-size: var(--type-caption); font-weight: 600; margin-left: auto; white-space: nowrap; }
+.option-verdict-correct { color: var(--color-success); }
+.option-verdict-incorrect { color: var(--color-danger); }
+
+/* --- Layout helpers --- */
+.grid { display: grid; gap: var(--space-5); }
+.grid-cards { grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); }
+.row { display: flex; gap: var(--space-3); flex-wrap: wrap; align-items: center; }
+.between { display: flex; justify-content: space-between; align-items: center; gap: var(--space-4); }
+.section { padding: var(--space-8) 0; }
+
+.notice {
+  border-radius: var(--radius-md);
+  padding: var(--space-4);
+  border: 1px solid var(--color-border-subtle);
+  background: var(--color-background-secondary);
+  color: var(--color-text-primary);
+}
+.notice-danger { border-color: var(--color-danger); }
+.notice-success { border-color: var(--color-success); }
