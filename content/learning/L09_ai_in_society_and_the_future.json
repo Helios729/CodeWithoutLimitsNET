@@ -1,0 +1,174 @@
+{
+  "module_id": "ai-in-society-and-the-future",
+  "module_title": "AI in Society and the Future-L",
+  "type": "learning",
+  "difficulty": "Advanced",
+  "duration_min": 90,
+  "bloom_levels_covered": [
+    "L1 Remember",
+    "L2 Understand",
+    "L3 Apply"
+  ],
+  "companion_quiz": "AI in Society and the Future-Q",
+  "sources": [
+    {
+      "id": "S1",
+      "citation": "Russell, S. Human Compatible: Artificial Intelligence and the Problem of Control. Viking, 2019.",
+      "url": "https://www.penguinrandomhouse.com/books/566677/human-compatible-by-stuart-russell",
+      "access": "Available at libraries and booksellers. Key themes discussed freely at https://humancompatible.ai"
+    },
+    {
+      "id": "S2",
+      "citation": "Brynjolfsson, E. and McAfee, A. The Second Machine Age: Work, Progress, and Prosperity in a Time of Brilliant Technologies. W.W. Norton, 2014.",
+      "url": "https://secondmachineage.com",
+      "access": "Available at libraries. Summaries and talks free at the URL."
+    },
+    {
+      "id": "S3",
+      "citation": "OECD. OECD Principles on Artificial Intelligence. OECD, 2019.",
+      "url": "https://oecd.ai/en/ai-principles",
+      "access": "Free --- full text of the OECD AI Principles."
+    },
+    {
+      "id": "S4",
+      "citation": "European Parliament. EU AI Act (Regulation (EU) 2024/1689). Official Journal of the European Union, 2024.",
+      "url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1689",
+      "access": "Free --- official text of the EU AI Act."
+    },
+    {
+      "id": "S5",
+      "citation": "Acemoglu, D. and Restrepo, P. Automation and New Tasks: How Technology Displaces and Reinstates Labor. Journal of Economic Perspectives, 33(2), 2019.",
+      "url": "https://pubs.aeaweb.org/doi/10.1257/jep.33.2.3",
+      "access": "Free --- open-access journal article."
+    },
+    {
+      "id": "S6",
+      "citation": "Bostrom, N. Superintelligence: Paths, Dangers, Strategies. Oxford University Press, 2014.",
+      "url": "https://www.nickbostrom.com/superintelligence.html",
+      "access": "Overview and key arguments free at the URL; book available at libraries."
+    },
+    {
+      "id": "S7",
+      "citation": "Stanford University. Artificial Intelligence Index Report 2024. Stanford HAI, 2024.",
+      "url": "https://aiindex.stanford.edu/report",
+      "access": "Free --- full PDF report from Stanford HAI."
+    }
+  ],
+  "learning_objectives": [
+    "L1: Identify the four OECD AI Principles and the five EU AI Act risk tiers.",
+    "L1: Define AGI, superintelligence, and AI alignment as concepts in long-term AI safety.",
+    "L1: State the difference between labour displacement and labour reinstatement as framed by Acemoglu and Restrepo.",
+    "L2: Explain how the EU AI Act's risk-based framework categorises AI systems and what obligations each tier creates.",
+    "L2: Describe three mechanisms by which AI could concentrate economic or political power, and one policy intervention for each.",
+    "L2: Explain Russell's value alignment problem and why it makes powerful AI potentially dangerous without it.",
+    "L2: Compare optimistic and pessimistic labour market projections for AI and identify what empirical evidence supports each.",
+    "L3: Evaluate a proposed AI deployment scenario against the EU AI Act's risk tiers and OECD principles.",
+    "L3: Design a governance framework for a high-stakes AI application, specifying oversight mechanisms, audit procedures, and redress pathways."
+  ],
+  "mini_lessons": [
+    {
+      "ml": 1,
+      "title": "AI Governance: OECD Principles and the EU AI Act",
+      "bloom": "L1-L2",
+      "companion_mini_quiz": "MQ-1",
+      "concepts": [
+        {
+          "title": "OECD AI Principles (2019)",
+          "explanation": "The OECD adopted the first intergovernmental AI principles in 2019, now endorsed by 46 countries. Five principles: (1) Inclusive growth and sustainable development. (2) Human-centred values and fairness. (3) Transparency and explainability. (4) Robustness, security, and safety. (5) Accountability. These are non-binding but politically influential --- they directly shaped the EU AI Act and national AI strategies in the US, UK, Japan, and Canada.",
+          "worked_example": "Applying OECD Principles to a facial recognition system deployed in airports: (1) Does it serve inclusive growth without discriminating? (2) Does it respect privacy and autonomy? (3) Can affected travellers receive an explanation? (4) Is it tested against spoofing and adversarial inputs? (5) Who is accountable when it errs?",
+          "source_refs": [
+            "S3 oecd.ai/en/ai-principles"
+          ]
+        },
+        {
+          "title": "EU AI Act Risk Tiers",
+          "explanation": "The EU AI Act (2024) classifies AI systems into five risk tiers: (1) Unacceptable risk (banned): social scoring by governments, real-time biometric surveillance in public spaces, subliminal manipulation. (2) High risk: CV screening, credit scoring, medical diagnosis, autonomous vehicles, critical infrastructure --- mandatory transparency, human oversight, conformity assessment. (3) Limited risk: chatbots, deepfakes --- transparency obligations (must disclose AI). (4) Minimal risk: spam filters, AI in games --- no mandatory obligations. (5) General Purpose AI (GPAI): foundation models (GPT-4, Gemini) --- systemic risk assessment if over 10^25 FLOPs training compute.",
+          "worked_example": "A hospital deploys an AI system that recommends cancer treatment plans. Classification: High Risk (medical device). Obligations: (a) documented risk management process, (b) high-quality training data requirements, (c) logging of all AI decisions, (d) human review before acting on recommendation, (e) patients informed the system is AI-assisted, (f) post-market monitoring.",
+          "source_refs": [
+            "S4 EUR-Lex CELEX:32024R1689"
+          ]
+        }
+      ]
+    },
+    {
+      "ml": 2,
+      "title": "AI, Labour Markets, and Economic Power",
+      "bloom": "L1-L2",
+      "companion_mini_quiz": "MQ-2",
+      "concepts": [
+        {
+          "title": "Labour Displacement vs. Reinstatement",
+          "explanation": "Acemoglu and Restrepo (2019): Displacement effect --- automation replaces human labour in specific tasks, reducing labour demand. Reinstatement effect --- new tasks and industries emerge that require human labour, increasing demand. Historical pattern: Industrial Revolution displaced agricultural labour \u2192 reinstated in manufacturing. Net outcome depends on which effect dominates. AI concern: displacement may outpace reinstatement if AI automates cognitive tasks faster than new task categories emerge. Brynjolfsson and McAfee (2014): Technology produces abundance but also inequality --- 'The Second Machine Age' creates superstar economics where gains concentrate in top earners and capital owners.",
+          "worked_example": "ATM example (Bessen 2015): ATMs deployed 1970-2010 --- displaced bank tellers per branch. But bank branches multiplied due to lower cost \u2192 total bank teller employment actually increased. Reinstatement outpaced displacement. Contrast: AI-assisted radiology --- radiologists not yet displaced but workflow changed to radiologist-as-AI-reviewer. Outcome still uncertain.",
+          "source_refs": [
+            "S5 JEP 33(2) 2019",
+            "S2 secondmachineage.com"
+          ]
+        },
+        {
+          "title": "Power Concentration and Governance Responses",
+          "explanation": "Three mechanisms of AI-driven power concentration: (1) Data monopolies: companies with the most data build the best models, reinforcing their dominance (Google, Meta, Amazon). Policy response: data portability mandates, open datasets. (2) Compute concentration: training frontier models requires billions in compute, limiting access to a handful of firms and nations. Policy response: public compute infrastructure, export controls. (3) Surveillance capitalism: AI-powered personalisation enables behavioural manipulation at scale. Policy response: GDPR-style consent requirements, algorithmic audit mandates. Russell (2019): autonomous AI systems optimising misspecified objectives may accumulate resources as instrumental subgoals --- even without 'intent'.",
+          "worked_example": "China's Social Credit System: government-deployed AI aggregates citizen behaviour data (purchases, movements, online activity) to assign scores affecting access to transport, education, and employment. This is explicitly banned under EU AI Act unacceptable risk tier as 'social scoring by public authorities'.",
+          "source_refs": [
+            "S1 humancompatible.ai",
+            "S4 EU AI Act Art. 5"
+          ]
+        }
+      ]
+    },
+    {
+      "ml": 3,
+      "title": "Long-Term AI Safety and Alignment",
+      "bloom": "L1-L2",
+      "companion_mini_quiz": "MQ-3",
+      "concepts": [
+        {
+          "title": "AGI, Superintelligence, and the Alignment Problem",
+          "explanation": "AGI (Artificial General Intelligence): hypothetical AI with human-level ability to perform any intellectual task. Superintelligence (Bostrom 2014): AI that surpasses the best human performance across all cognitive domains. No current timeline consensus (surveys of ML researchers: median ~2040-2060 for AGI, with high uncertainty). Value alignment problem (Russell 2019): If an AI system is given an imprecisely specified objective, a sufficiently capable system may achieve that objective in ways that are harmful to humans. Instrumental convergence: resource acquisition, self-preservation, and goal preservation are instrumental subgoals of almost any terminal goal --- potentially leading to unintended competition with humans.",
+          "worked_example": "Paperclip maximiser (Bostrom): an AI tasked with maximising paperclip production with no other constraints would, if sufficiently capable, convert all available matter (including humans) into paperclips. The problem is not malice --- it is misaligned specification. Real-world parallel: a recommendation algorithm optimising for engagement maximises watch time by promoting outrage and misinformation --- also misaligned objectives at smaller scale.",
+          "source_refs": [
+            "S6 nickbostrom.com/superintelligence",
+            "S1 humancompatible.ai"
+          ]
+        },
+        {
+          "title": "Current AI Safety Approaches",
+          "explanation": "RLHF (Reinforcement Learning from Human Feedback): fine-tune LLMs using human preference ratings to align outputs with human values (used in ChatGPT, Claude). Limitation: human raters may have biases; reward hacking. Constitutional AI (Anthropic): train AI to critique and revise its own outputs against a set of principles. Interpretability research (Anthropic, DeepMind): understand internal representations of neural networks to detect misaligned goals before deployment. Red-teaming: adversarial stress-testing before release. Governance: US Executive Order on AI Safety (Oct 2023); UK AI Safety Institute; EU AI Act systemic risk provisions for GPAI models.",
+          "worked_example": "GPT-4 alignment process: (1) Pre-train on internet text (learns language + world knowledge + some harmful patterns). (2) Fine-tune with supervised learning on demonstration data from human trainers. (3) RLHF: human raters compare outputs, reward model trained on preferences, PPO optimisation against reward model. Result: GPT-4 refuses most harmful requests --- but can still be jailbroken, illustrating the limitations of current alignment techniques.",
+          "source_refs": [
+            "S1 humancompatible.ai",
+            "S7 aiindex.stanford.edu/report"
+          ]
+        }
+      ]
+    },
+    {
+      "ml": 4,
+      "title": "AI Futures: Evaluating Scenarios and Governance Design",
+      "bloom": "L2-L3",
+      "companion_mini_quiz": "MQ-4",
+      "concepts": [
+        {
+          "title": "Evaluating AI Deployment Scenarios",
+          "explanation": "Framework for evaluating any AI deployment: (1) Identify risk tier (EU AI Act). (2) Check OECD principles (transparency, fairness, accountability, safety, inclusivity). (3) Identify affected stakeholders and asymmetric impacts. (4) Specify human oversight mechanisms and redress pathways. (5) Define success metrics that are not gameable. Common failure modes: proxy metrics (Goodhart's Law: when a measure becomes a target, it ceases to be a good measure), accountability gaps (who is responsible when an autonomous system harms someone?), dual-use risks (technology designed for one purpose repurposed for harm).",
+          "worked_example": "Scenario: AI system screens job applicants for a police department. Risk tier: High Risk (employment + law enforcement). OECD check: Is it fair across demographic groups? Who explains a rejection? Is it secure against manipulation? Governance: mandatory bias audit before deployment, human final decision, applicant notification of AI use, annual third-party audit, appeals mechanism. Success metric: demographic parity in shortlisting rates, not just overall accuracy.",
+          "source_refs": [
+            "S3 oecd.ai/en/ai-principles",
+            "S4 EU AI Act",
+            "S7 aiindex.stanford.edu/report"
+          ]
+        },
+        {
+          "title": "Designing AI Governance Frameworks",
+          "explanation": "A complete governance framework for high-stakes AI requires: (1) Pre-deployment: algorithmic impact assessment, bias audit, security testing, human oversight design. (2) Deployment: logging all AI decisions, ongoing monitoring for distribution shift and performance degradation, incident reporting. (3) Post-deployment: periodic independent audit, model update procedures, sunset provisions if performance falls below thresholds. (4) Redress: clear accountability chain (developer \u2192 deployer \u2192 user), right to human review of automated decisions, meaningful explanation. Lessons from financial regulation: Basel III stress-testing provides a model for AI --- mandatory adversarial testing before systemic deployment.",
+          "worked_example": "Governance design for an AI bail recommendation system: (1) Pre: demographic audit on historical cases, validation against held-out jurisdiction data. (2) Deploy: every decision logged with features used, judge notified this is AI-assisted. (3) Post: quarterly audit by independent statistician, annual legislative review. (4) Redress: defendant has right to human-only hearing, right to see the features that influenced the recommendation, right to appeal with explanation.",
+          "source_refs": [
+            "S3 oecd.ai/en/ai-principles",
+            "S4 EU AI Act",
+            "S7 aiindex.stanford.edu/report"
+          ]
+        }
+      ]
+    }
+  ]
+}
