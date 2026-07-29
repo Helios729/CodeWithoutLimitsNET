@@ -5,6 +5,8 @@ import { AuthProvider } from './state/AuthContext.jsx';
 import Layout from './components/Layout.jsx';
 import RequireAuth from './components/RequireAuth.jsx';
 import Home from './pages/Home.jsx';
+import CoreMission from './pages/CoreMission.jsx';
+import WhyExists from './pages/WhyExists.jsx';
 import Catalogue from './pages/Catalogue.jsx';
 import ModuleDetail from './pages/ModuleDetail.jsx';
 import Lesson from './pages/Lesson.jsx';
@@ -23,6 +25,9 @@ createRoot(document.getElementById('root')).render(
         <Routes>
           <Route element={<Layout />}>
             <Route index element={<Home />} />
+            <Route path="welcome" element={<CoreMission />} />
+            <Route path="welcome/why" element={<WhyExists />} />
+            <Route path="mission" element={<CoreMission />} />
             <Route path="courses" element={<Catalogue />} />
             <Route path="courses/:moduleId" element={<ModuleDetail />} />
             <Route path="courses/:moduleId/lessons/:ml" element={<Lesson />} />

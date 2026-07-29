@@ -30,6 +30,9 @@ function Nav() {
         </Link>
 
         <nav className="row" aria-label="Main">
+          <NavLink to="/welcome" className="btn btn-quiet">
+            Mission
+          </NavLink>
           <NavLink to="/courses" className="btn btn-quiet">
             Courses
           </NavLink>

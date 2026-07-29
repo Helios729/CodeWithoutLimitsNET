@@ -1,7 +1,22 @@
-import { Link } from 'react-router-dom';
+import { useEffect } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
 import MountainRidge from '../components/MountainRidge.jsx';
 
 export default function Home() {
+  const navigate = useNavigate();
+
+  // First-time visitors are sent to the mission gate; returning visitors
+  // (who have tapped "I understand") get the normal home page.
+  useEffect(() => {
+    try {
+      if (localStorage.getItem('cwl.welcome.acknowledged') !== 'true') {
+        navigate('/welcome', { replace: true });
+      }
+    } catch {
+      navigate('/welcome', { replace: true });
+    }
+  }, [navigate]);
+
   return (
     <>
       <section style={{ background: 'var(--color-background-primary)', overflow: 'hidden' }}>
