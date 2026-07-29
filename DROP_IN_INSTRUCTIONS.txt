@@ -1,68 +1,43 @@
-import { useNavigate } from 'react-router-dom';
+READING LIST + GLOSSARY — DROP-IN
+==================================
+Two new pages, each with bundled content (works offline). Terminal-copy method.
 
-/**
- * Page 1 of the two-page welcome flow: "Our core mission".
- *
- * This is the shorter, mission-framing screen. It ends in a "Continue" button
- * that leads to page 2 ("Why Code Without Limits exists"). Splitting the
- * welcome across two deliberate screens is intentional: each tap is a small
- * moment of commitment that reinforces the seriousness and the format, and two
- * shorter screens render more kindly on a modest phone than one long one.
- *
- * Copy is verbatim from the original app's core-mission screen.
- */
+STEP 1 — Upload this folder into the Codespace (drag into file explorer).
+         It appears as "reading-glossary".
 
-export default function CoreMission() {
-  const navigate = useNavigate();
+STEP 2 — The data folder is NEW, so create it first, then copy all files:
 
-  return (
-    <article className="shell section" style={{ maxWidth: 820 }}>
-      <div
-        aria-hidden="true"
-        style={{
-          width: 44,
-          height: 44,
-          borderRadius: '999px',
-          border: '1.5px solid var(--color-brand-primary)',
-          display: 'grid',
-          placeItems: 'center',
-          marginBottom: 'var(--space-4)'
-        }}
-      >
-        {/* Compass glyph, echoing the original */}
-        <svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true">
-          <circle cx="12" cy="12" r="9" fill="none" stroke="var(--color-brand-primary)" strokeWidth="1.5" />
-          <path d="M15.5 8.5 11 11l-2.5 4.5L13 13l2.5-4.5Z" fill="var(--color-brand-primary)" />
-        </svg>
-      </div>
+  cd /workspaces/CodeWithoutLimitsNET
+  mkdir -p apps/web/src/data
+  cp reading-glossary/apps/web/src/data/reading-list.json apps/web/src/data/reading-list.json
+  cp reading-glossary/apps/web/src/data/glossary.json     apps/web/src/data/glossary.json
+  cp reading-glossary/apps/web/src/pages/ReadingList.jsx  apps/web/src/pages/ReadingList.jsx
+  cp reading-glossary/apps/web/src/pages/Glossary.jsx     apps/web/src/pages/Glossary.jsx
+  cp reading-glossary/apps/web/src/main.jsx               apps/web/src/main.jsx
+  cp reading-glossary/apps/web/src/components/Layout.jsx  apps/web/src/components/Layout.jsx
 
-      <p className="overline">Our core mission</p>
-      <h1>Mitigate the digital — and now the AI — divide.</h1>
+STEP 3 — Verify all landed (should print all four filenames, no errors):
 
-      <p>
-        The core mission for creating this app is to mitigate the digital, and now AI, divide. AI
-        was used as a co-creator for this app — specifically, <strong>Perplexity</strong> to verify
-        research, and both <strong>Claude 4.6</strong> and <strong>ChatGPT 5.4</strong> to verify,
-        and at times, write or edit, code. The lessons are presented in a format that eventually
-        leads users to understand that coding through AI without knowing anything about basic
-        elements of computer science / computer engineering is costly and potentially hazardous.
-      </p>
+  ls apps/web/src/data/glossary.json apps/web/src/data/reading-list.json apps/web/src/pages/ReadingList.jsx apps/web/src/pages/Glossary.jsx
 
-      <p>
-        Additional Reading Lists will eventually be provided along with more links to free open
-        courses where users may further their knowledge. If funds or grants permit on their end or
-        ours, they can seek certification by paying the requisite fees on those platforms with which
-        we have no affiliation.
-      </p>
+STEP 4 — Build, commit, push:
 
-      <button
-        type="button"
-        className="btn btn-primary btn-block"
-        style={{ marginTop: 'var(--space-6)', minHeight: 52, fontSize: '1.05rem' }}
-        onClick={() => navigate('/welcome/why')}
-      >
-        Continue →
-      </button>
-    </article>
-  );
-}
+  npm run build:web
+  git add .
+  git commit -m "Add reading list and glossary pages"
+  git push
+
+STEP 5 — Render: codewithoutlimitsnet-1 -> Manual Deploy
+  -> Clear build cache & deploy. Hard-refresh (Ctrl+Shift+R).
+
+WHAT YOU GET
+  - Two new nav links: "Reading list" and "Glossary".
+  - Reading list: 5 free textbooks + open online courses grouped by subject,
+    each with working links and the "verified on" date.
+  - Glossary: all 17 terms (Bandwidth, Throughput, Token, Hallucination, etc.)
+    with short + full definitions, examples, cited sources, and instant search.
+  - Both work offline once loaded (content is bundled, no server call).
+
+STEP 6 (optional) — cross-link from the mission page:
+  The "Open Reading List & Free Courses" button on the Why-Exists page can point
+  to /reading-list. Ask Claude to wire it if you'd like.
