@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /dashboard
+Disallow: /quiz
+
+Sitemap: https://codewithoutlimits.net/sitemap.xml
