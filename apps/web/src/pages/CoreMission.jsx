@@ -48,26 +48,13 @@ export default function CoreMission() {
         elements of computer science / computer engineering is costly and potentially hazardous.
       </p>
 
-      <p>
-        It would be unethical for users to think they can build complex systems in an hour or less.
-        All users must understand concepts such as <strong>bandwidth</strong>,{' '}
-        <strong>throughput</strong>, <strong>bottlenecks</strong>, <strong>timeouts</strong>,{' '}
-        <strong>resets</strong>, and <strong>memory</strong> to use the available AI tools
-        effectively and efficiently — in terms of both time and cost.
-      </p>
+      
 
       <p>
-        Consequently, the sequence starts with an <strong>Introduction to AI</strong> and ends with{' '}
-        <strong>Advanced HTML and API formation</strong> so students can comprehend that the
-        foundation greatly matters — despite how much fun coding without foundational knowledge
-        might seem.
-      </p>
-
-      <p>
-        Reading Lists will eventually be added along with links to free open courses where users may
-        obtain additional knowledge. If funds or grants permit on their end or ours, they can seek
-        certification by paying the requisite fees on those platforms with which we have no
-        affiliation.
+       Additional Reading Lists will eventually be provided along with more links to free open
+        courses where users may further their knowledge. If funds or grants permit on their end or
+        ours, they can seek certification by paying the requisite fees on those platforms with which
+        we have no affiliation.
       </p>
 
       <button
