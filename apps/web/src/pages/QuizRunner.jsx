@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
+import { CheckIcon, CrossIcon } from '../components/Icons.jsx';
 import { api } from '../lib/api.js';
 import { Loading, ErrorNotice, ProgressMeter } from '../components/Bits.jsx';
 
@@ -154,7 +155,8 @@ function Results({ moduleId, result }) {
         {score.score} out of {score.total} — {score.percentage}%
       </h1>
       <p>
-        <span className={score.passed ? 'badge badge-success' : 'badge badge-danger'}>
+        <span className={score.passed ? 'badge badge-success' : 'badge badge-danger'} style={{ display: 'inline-flex', alignItems: 'center', gap: '6px' }}>
+          {score.passed ? <CheckIcon size={14} /> : <CrossIcon size={14} />}
           {score.passed ? 'Passed' : 'Not yet'}
         </span>{' '}
         <span className="muted small">Pass mark is {score.passThresholdPct}%.</span>
@@ -180,8 +182,9 @@ function Results({ moduleId, result }) {
           className={`card ${item.correct ? 'option-correct' : 'option-incorrect'}`}
           style={{ marginBottom: 'var(--space-4)' }}
         >
-          <p className={`overline ${item.correct ? 'option-verdict-correct' : 'option-verdict-incorrect'}`}>
-            {item.correct ? 'Correct' : 'Incorrect'} · {item.bloom}
+          <p className={`overline ${item.correct ? 'option-verdict-correct' : 'option-verdict-incorrect'}`} style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
+            {item.correct ? <CheckIcon size={15} /> : <CrossIcon size={15} />}
+            <span>{item.correct ? 'Correct' : 'Incorrect'} · {item.bloom}</span>
           </p>
           <h4>{item.stem}</h4>
           <p className="small">

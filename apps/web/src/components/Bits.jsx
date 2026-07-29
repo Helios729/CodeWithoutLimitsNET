@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import { WarningIcon } from './Icons.jsx';
 
 export function ProgressMeter({ value, max = 100, label }) {
   const pct = max > 0 ? Math.min(100, Math.round((value / max) * 100)) : 0;
@@ -71,7 +72,10 @@ export function ErrorNotice({ error, onRetry }) {
   if (!error) return null;
   return (
     <div className="notice notice-danger stack" role="alert">
-      <p style={{ margin: 0, color: 'var(--color-text-primary)', fontWeight: 500 }}>{error.message}</p>
+      <p style={{ margin: 0, color: 'var(--color-text-primary)', fontWeight: 500, display: 'flex', alignItems: 'flex-start', gap: '8px' }}>
+        <WarningIcon size={18} style={{ color: 'var(--color-danger)', marginTop: '2px' }} />
+        <span>{error.message}</span>
+      </p>
       {error.details?.length > 0 && (
         <ul className="small muted" style={{ margin: 0, paddingLeft: '1.1rem' }}>
           {error.details.map((d) => (
@@ -109,7 +113,8 @@ export function Field({ id, label, hint, error, ...inputProps }) {
         </span>
       )}
       {error && (
-        <span className="field-error" id={errorId} role="alert">
+        <span className="field-error" id={errorId} role="alert" style={{ display: 'inline-flex', alignItems: 'center', gap: '6px' }}>
+          <WarningIcon size={15} />
           {error}
         </span>
       )}
