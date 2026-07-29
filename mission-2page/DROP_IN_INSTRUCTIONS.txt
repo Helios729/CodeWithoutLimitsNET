@@ -1,0 +1,44 @@
+TWO-PAGE MISSION / WELCOME FLOW — DROP-IN FILES
+================================================
+
+Use the TERMINAL COPY method (this is what worked for the palette).
+
+STEP 1 — Upload this folder into the Codespace (drag into file explorer).
+         It appears as "mission-2page".
+
+STEP 2 — In the terminal, from the project root, run:
+
+  cd /workspaces/CodeWithoutLimitsNET
+  cp mission-2page/apps/web/src/pages/CoreMission.jsx apps/web/src/pages/CoreMission.jsx
+  cp mission-2page/apps/web/src/pages/WhyExists.jsx   apps/web/src/pages/WhyExists.jsx
+  cp mission-2page/apps/web/src/main.jsx              apps/web/src/main.jsx
+  cp mission-2page/apps/web/src/pages/Home.jsx        apps/web/src/pages/Home.jsx
+  cp mission-2page/apps/web/src/components/Layout.jsx apps/web/src/components/Layout.jsx
+
+STEP 3 — If an old single Mission.jsx exists, remove it so it can't conflict:
+
+  rm -f apps/web/src/pages/Mission.jsx
+
+STEP 4 — Verify both new pages landed:
+
+  ls apps/web/src/pages/CoreMission.jsx apps/web/src/pages/WhyExists.jsx
+  grep -c "Continue" apps/web/src/pages/CoreMission.jsx
+
+  The first prints two filenames; the second prints 1 or more.
+
+STEP 5 — Build, commit, push:
+
+  npm run build:web
+  git add .
+  git commit -m "Split welcome into two sequential pages: core mission + why"
+  git push
+
+STEP 6 — On Render: codewithoutlimitsnet-1 -> Manual Deploy
+  -> Clear build cache & deploy. Then hard-refresh (Ctrl+Shift+R).
+
+TO TEST THE FIRST-TIME FLOW after deploy:
+  - Open the site in a private/incognito window (that browser has no memory of
+    you), and you should land on page 1, tap Continue, see page 2, tap
+    "I understand - let's begin", then arrive at the courses.
+  - A normal window where you've already tapped it will skip to courses; the
+    "Mission" link in the top nav still opens the flow.
