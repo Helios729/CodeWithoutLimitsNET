@@ -1,3 +1,8 @@
+bash
+
+cd /home/claude/cwl && cat apps/web/src/main.jsx
+Output
+
 import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
@@ -7,6 +12,8 @@ import RequireAuth from './components/RequireAuth.jsx';
 import Home from './pages/Home.jsx';
 import CoreMission from './pages/CoreMission.jsx';
 import WhyExists from './pages/WhyExists.jsx';
+import ReadingList from './pages/ReadingList.jsx';
+import Glossary from './pages/Glossary.jsx';
 import Catalogue from './pages/Catalogue.jsx';
 import ModuleDetail from './pages/ModuleDetail.jsx';
 import Lesson from './pages/Lesson.jsx';
@@ -28,6 +35,8 @@ createRoot(document.getElementById('root')).render(
             <Route path="welcome" element={<CoreMission />} />
             <Route path="welcome/why" element={<WhyExists />} />
             <Route path="mission" element={<CoreMission />} />
+            <Route path="reading-list" element={<ReadingList />} />
+            <Route path="glossary" element={<Glossary />} />
             <Route path="courses" element={<Catalogue />} />
             <Route path="courses/:moduleId" element={<ModuleDetail />} />
             <Route path="courses/:moduleId/lessons/:ml" element={<Lesson />} />
