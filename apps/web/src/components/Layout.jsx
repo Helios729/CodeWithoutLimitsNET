@@ -1,3 +1,5 @@
+
+
 import { Link, NavLink, Outlet } from 'react-router-dom';
 import { useAuth } from '../state/AuthContext.jsx';
 
@@ -35,6 +37,12 @@ function Nav() {
           </NavLink>
           <NavLink to="/courses" className="btn btn-quiet">
             Courses
+          </NavLink>
+          <NavLink to="/reading-list" className="btn btn-quiet">
+            Reading list
+          </NavLink>
+          <NavLink to="/glossary" className="btn btn-quiet">
+            Glossary
           </NavLink>
           {user ? (
             <>
@@ -116,3 +124,7 @@ export default function Layout() {
     </>
   );
 }
+
+
+
+

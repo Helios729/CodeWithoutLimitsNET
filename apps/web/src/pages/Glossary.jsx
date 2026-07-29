@@ -1,8 +1,3 @@
-bash
-
-cd /home/claude/cwl && cat apps/web/src/pages/Glossary.jsx
-Output
-
 import { useState, useMemo } from 'react';
 import glossaryData from '../data/glossary.json';
 

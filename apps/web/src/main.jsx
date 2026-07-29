@@ -1,8 +1,3 @@
-bash
-
-cd /home/claude/cwl && cat apps/web/src/main.jsx
-Output
-
 import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';

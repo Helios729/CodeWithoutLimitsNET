@@ -1,8 +1,3 @@
-bash
-
-cd /home/claude/cwl && cat apps/web/src/data/reading-list.json
-Output
-
 {
   "schema_version": "1.0",
   "title": "Reading List & Open Online Courses",
@@ -117,5 +112,3 @@ Output
   },
   "footnote": "Inclusion does not imply endorsement of any platform's commercial offerings. All links verified live on the verified_on date. If a link rots, tell us through the in-module survey."
 }
-Done
-There's the content for File 1. Copy ever
