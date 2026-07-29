@@ -1,0 +1,32 @@
+CORE MISSION PAGE 1 — DUPLICATE FIX
+====================================
+Only ONE file changed. This replaces page 1 (Core Mission) to remove the two
+paragraphs that duplicated page 2, and updates the reading-list wording.
+
+STEP 1 — Upload CoreMission.jsx into the Codespace (drag into file explorer).
+         It will land at the top level as CoreMission.jsx.
+
+STEP 2 — In the terminal, copy it into place (this is the step that matters —
+         do NOT rely on the upload landing in the right folder):
+
+  cd /workspaces/CodeWithoutLimitsNET
+  cp CoreMission.jsx apps/web/src/pages/CoreMission.jsx
+
+STEP 3 — Verify the duplicates are gone (should print 0):
+
+  grep -c "unethical" apps/web/src/pages/CoreMission.jsx
+
+  And confirm the new wording is there (should print 1):
+
+  grep -c "Additional Reading Lists will eventually be provided" apps/web/src/pages/CoreMission.jsx
+
+STEP 4 — Clean up the stray upload, then build, commit, push:
+
+  rm -f CoreMission.jsx
+  npm run build:web
+  git add .
+  git commit -m "Remove duplicate paragraphs from core mission page 1"
+  git push
+
+STEP 5 — Render: codewithoutlimitsnet-1 -> Manual Deploy
+  -> Clear build cache & deploy. Hard-refresh (Ctrl+Shift+R) in incognito.
