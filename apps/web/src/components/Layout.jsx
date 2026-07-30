@@ -34,7 +34,7 @@ function Nav() {
             Mission
           </NavLink>
           <NavLink to="/courses" className="btn btn-quiet">
-            Courses
+            Learning Modules
           </NavLink>
           <NavLink to="/reading-list" className="btn btn-quiet">
             Reading list
@@ -96,7 +96,7 @@ function Footer() {
               Code Without Limits
             </p>
             <p style={{ color: 'var(--color-accent-warm)', fontSize: 'var(--type-caption)' }}>
-              Courses built for learners on modest devices and slow connections. Every claim is
+              Learning Modules built for learners on modest devices and slow connections. Every claim is
               tied to a named, freely reachable source.
             </p>
           </div>
