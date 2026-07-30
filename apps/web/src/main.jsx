@@ -9,6 +9,9 @@ import CoreMission from './pages/CoreMission.jsx';
 import WhyExists from './pages/WhyExists.jsx';
 import ReadingList from './pages/ReadingList.jsx';
 import Glossary from './pages/Glossary.jsx';
+import IncomeBank from './pages/IncomeBank.jsx';
+import IncomeModuleDetail from './pages/IncomeModuleDetail.jsx';
+import Translations from './pages/Translations.jsx';
 import Catalogue from './pages/Catalogue.jsx';
 import ModuleDetail from './pages/ModuleDetail.jsx';
 import Lesson from './pages/Lesson.jsx';
@@ -32,6 +35,9 @@ createRoot(document.getElementById('root')).render(
             <Route path="mission" element={<CoreMission />} />
             <Route path="reading-list" element={<ReadingList />} />
             <Route path="glossary" element={<Glossary />} />
+            <Route path="income" element={<IncomeBank />} />
+            <Route path="income/:moduleId" element={<IncomeModuleDetail />} />
+            <Route path="translations" element={<Translations />} />
             <Route path="courses" element={<Catalogue />} />
             <Route path="courses/:moduleId" element={<ModuleDetail />} />
             <Route path="courses/:moduleId/lessons/:ml" element={<Lesson />} />
