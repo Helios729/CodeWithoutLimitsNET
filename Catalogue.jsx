@@ -24,8 +24,8 @@ export default function Catalogue() {
 
   return (
     <div className="shell section">
-      <p className="overline">Course catalogue</p>
-      <h1>Ten courses, start anywhere</h1>
+      <p className="overline">Course Catalogue</p>
+      <h1>Start from the Heart</h1>
       <p style={{ maxWidth: 620 }}>
         Beginner courses assume nothing. Advanced courses assume you have finished the
         intermediate ones, but nothing is locked.
