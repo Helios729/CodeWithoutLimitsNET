@@ -174,6 +174,32 @@ async function run() {
     for (const note of notes) console.log(`            note: ${note}`);
   }
 
+  // Catalogue order and marketing belong to catalogue.json, not to the lesson
+  // files. Re-apply them on every run so that editing catalogue.json alone is
+  // enough to reorder or re-describe a course, even when its lesson content was
+  // unchanged (and therefore skipped above).
+  if (!dryRun && catalogue.size > 0) {
+    let resynced = 0;
+    for (const [id, entry] of catalogue) {
+      const res = await Module.updateOne(
+        { module_id: id },
+        {
+          $set: {
+            order: order.get(id) ?? 999,
+            tagline: entry.tagline ?? '',
+            description: entry.description ?? '',
+            what_you_learn: entry.what_you_learn ?? [],
+            thumb: entry.thumb ?? '',
+            affiliate_url: entry.affiliate_url ?? '',
+            price_cents: entry.price_cents ?? 0
+          }
+        }
+      );
+      if (res.matchedCount) resynced += 1;
+    }
+    console.log(`  catalogue metadata re-synced for ${resynced} module(s)`);
+  }
+
   // Report modules whose companion quiz has not been ingested. Shipping a
   // module with a dead "Take the quiz" button is a worse learner experience
   // than not listing the module at all.
