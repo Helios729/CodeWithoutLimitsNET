@@ -1,0 +1,109 @@
+{
+  "module_id": "basic-data-manipulation",
+  "module_title": "Basic Data Manipulation-L",
+  "type": "learning",
+  "difficulty": "Beginner",
+  "duration_min": 60,
+  "bloom_levels_covered": [
+    "L1 Remember",
+    "L2 Understand",
+    "L3 Apply"
+  ],
+  "companion_quiz": "",
+  "sources": [
+    {
+      "id": "S1",
+      "citation": "Python Software Foundation. The Python Tutorial. 2024.",
+      "url": "https://docs.python.org/3/tutorial",
+      "access": "Free."
+    },
+    {
+      "id": "S2",
+      "citation": "Python Software Foundation. Input and Output: Reading and Writing Files. 2024.",
+      "url": "https://docs.python.org/3/tutorial/inputoutput.html",
+      "access": "Free."
+    },
+    {
+      "id": "S3",
+      "citation": "MIT OCW 6.100L Introduction to CS and Programming Using Python, Fall 2022.",
+      "url": "https://ocw.mit.edu/courses/6-100l-introduction-to-cs-and-programming-using-python-fall-2022/",
+      "access": "Free."
+    }
+  ],
+  "learning_objectives": [
+    "L1: Identify core string methods: .strip(), .lower(), .replace(), .split(), .join().",
+    "L1: Identify core list operations: .append(), .pop(), .sort(), sorted(), enumerate(), zip().",
+    "L1: Define dictionary and set operations: .get(), .items(), set(), intersection, difference.",
+    "L2: Explain how the with-open context manager guarantees a file is closed.",
+    "L2: Compare .sort() (in place) with sorted() (returns a new list).",
+    "L3: Write a list comprehension that filters values by a condition.",
+    "L3: Build a frequency-counter dictionary from a block of text.",
+    "L3: Read a text file line by line and write a summarised report to a new file."
+  ],
+  "mini_lessons": [
+    {
+      "ml": 1,
+      "title": "Working with Strings and Text Processing",
+      "bloom": "L1-L2",
+      "companion_mini_quiz": "MQ-1",
+      "concepts": [
+        {
+          "title": "Cleaning and Reshaping Text",
+          "explanation": "Strings are immutable Unicode. Slice with text[start:end] where end is exclusive. Clean with .strip() to trim whitespace and .lower() to normalise case. Substitute with .replace('old','new'). Break a string into a list with .split(',') and rejoin with ', '.join(items). Format output with f-strings: f'Cleaned: {value}'.",
+          "worked_example": "raw='  Ada, Grace , Alan '; parts=[p.strip() for p in raw.strip().lower().split(',')]; ', '.join(parts) -> 'ada, grace, alan'",
+          "source_refs": [
+            "S1 Ch.3"
+          ]
+        }
+      ]
+    },
+    {
+      "ml": 2,
+      "title": "List Manipulations and Filtering",
+      "bloom": "L2-L3",
+      "companion_mini_quiz": "MQ-2",
+      "concepts": [
+        {
+          "title": "Organising and Filtering Lists",
+          "explanation": "Add items with .append() and remove by index with .pop(). Sort in place with .sort(), or get a new ordered list with sorted() while leaving the original untouched. Filter with a comprehension: [x for x in data if condition]. Track positions with enumerate(items) and process parallel lists together with zip(a, b).",
+          "worked_example": "scores=[72,-3,90,55,-1]; sorted([s for s in scores if s>=60]) -> [72, 90]",
+          "source_refs": [
+            "S1 Ch.5"
+          ]
+        }
+      ]
+    },
+    {
+      "ml": 3,
+      "title": "Structured Data with Dictionaries and Sets",
+      "bloom": "L2-L3",
+      "companion_mini_quiz": "MQ-3",
+      "concepts": [
+        {
+          "title": "Key-Value and Unique Collections",
+          "explanation": "Dictionaries store key-value pairs. Read safely with .get(key, default) to avoid a KeyError, and iterate with for key, value in d.items(). Sets hold only unique values: set(my_list) strips duplicates instantly, a & b gives the intersection, and a - b gives the difference.",
+          "worked_example": "freq={}; [freq.__setitem__(w, freq.get(w,0)+1) for w in 'the cat the mat'.split()]; freq -> {'the':2,'cat':1,'mat':1}",
+          "source_refs": [
+            "S1 Ch.5"
+          ]
+        }
+      ]
+    },
+    {
+      "ml": 4,
+      "title": "File Input/Output and Simple Data Streams",
+      "bloom": "L2-L3",
+      "companion_mini_quiz": "MQ-4",
+      "concepts": [
+        {
+          "title": "Reading and Writing Files Safely",
+          "explanation": "Open files with a context manager: with open('data.txt','r') as f, and the file closes automatically even if an error occurs. Iterate line by line (for line in f) to handle large files without loading them into memory. Parse each record with line.strip().split(','). Write results with open(path,'w') and out.write(text + '\\n').",
+          "worked_example": "with open('log.txt') as f: rows=[ln.strip().split(',') for ln in f]  # each row -> [user, action]",
+          "source_refs": [
+            "S2"
+          ]
+        }
+      ]
+    }
+  ]
+}
