@@ -19,25 +19,6 @@
     "affiliate_url": "https://ocw.mit.edu/courses/res-6-013-ai-101-fall-2021/"
   },
   {
-    "id": "edtech-and-learning-science",
-    "title": "EdTech and Learning Science-L",
-    "tagline": "Connect educational technology design with evidence-based learning science.",
-    "difficulty": "Beginner",
-    "duration_min": 90,
-    "price_cents": 0,
-    "thumb": "/thumbs/edtech-learning-science.png",
-    "description": "Educational technology (EdTech) refers to the design, development, and use of digital tools, platforms, and media to support teaching and learning. This module grounds EdTech decisions in learning science — the interdisciplinary study of how people learn, drawing on cognitive psychology, neuroscience, instructional design, and educational research. Core concepts include Bloom's Taxonomy, cognitive load theory, retrieval practice, spaced repetition, interleaving, feedback timing, formative versus summative assessment, metacognition, motivation, self-regulation, and Universal Design for Learning (UDL). Application tasks require students to write a learning objective using Bloom's action verbs, align an activity to an outcome, and critique an EdTech feature using evidence-based instructional principles.",
-    "what_you_learn": [
-      "Define educational technology and core learning science concepts.",
-      "Identify how Bloom's Taxonomy informs curriculum and assessment design.",
-      "Explain the role of cognitive load, retrieval practice, and feedback in learning.",
-      "Compare synchronous, asynchronous, blended, and adaptive learning models.",
-      "Evaluate an EdTech tool using evidence-based instructional criteria.",
-      "Design learning objectives and activities aligned with sound pedagogy."
-    ],
-    "affiliate_url": "https://www.unesco.org/en/digital-education/artificial-intelligence"
-  },
-  {
     "id": "ai-ethics-and-responsible-use",
     "title": "AI Ethics and Responsible Use of AI-L",
     "tagline": "Study ethical, legal, and societal responsibilities in the design and use of AI.",
@@ -57,23 +38,23 @@
     "affiliate_url": "https://www.nist.gov/itl/ai-risk-management-framework"
   },
   {
-    "id": "algorithms-and-data-structures",
-    "title": "Algorithms and Data Structures-L",
-    "tagline": "Learn how computational problems are represented, organized, and solved efficiently.",
-    "difficulty": "Intermediate",
-    "duration_min": 100,
+    "id": "edtech-and-learning-science",
+    "title": "EdTech and Learning Science-L",
+    "tagline": "Connect educational technology design with evidence-based learning science.",
+    "difficulty": "Beginner",
+    "duration_min": 90,
     "price_cents": 0,
-    "thumb": "/thumbs/algorithms-data-structures.png",
-    "description": "An algorithm is a finite, well-defined sequence of steps for solving a computational problem. A data structure is a scheme for organizing and storing data to enable efficient access and modification. This module introduces arrays, linked lists, stacks, queues, hash tables, binary search trees, heaps, and graphs. Core algorithms include linear search, binary search, merge sort, quicksort, depth-first search, breadth-first search, Dijkstra, and dynamic programming. The module also introduces recursion, divide-and-conquer, greedy algorithms, and Big-O notation. Application tasks require students to trace algorithms, calculate time complexity, and select appropriate data structures for defined scenarios. Sources: MIT OCW 6.006 Introduction to Algorithms, Spring 2020; Cormen et al., Introduction to Algorithms (CLRS), 4th ed., MIT Press, 2022.",
+    "thumb": "/thumbs/edtech-learning-science.png",
+    "description": "Educational technology (EdTech) refers to the design, development, and use of digital tools, platforms, and media to support teaching and learning. This module grounds EdTech decisions in learning science — the interdisciplinary study of how people learn, drawing on cognitive psychology, neuroscience, instructional design, and educational research. Core concepts include Bloom's Taxonomy, cognitive load theory, retrieval practice, spaced repetition, interleaving, feedback timing, formative versus summative assessment, metacognition, motivation, self-regulation, and Universal Design for Learning (UDL). Application tasks require students to write a learning objective using Bloom's action verbs, align an activity to an outcome, and critique an EdTech feature using evidence-based instructional principles.",
     "what_you_learn": [
-      "Define core data structures and algorithmic paradigms.",
-      "Interpret Big-O notation for common operations.",
-      "Explain how searching and sorting algorithms operate.",
-      "Compare data structures based on use case and efficiency.",
-      "Trace algorithm execution on sample inputs.",
-      "Choose and apply suitable structures and algorithms to concrete problems."
+      "Define educational technology and core learning science concepts.",
+      "Identify how Bloom's Taxonomy informs curriculum and assessment design.",
+      "Explain the role of cognitive load, retrieval practice, and feedback in learning.",
+      "Compare synchronous, asynchronous, blended, and adaptive learning models.",
+      "Evaluate an EdTech tool using evidence-based instructional criteria.",
+      "Design learning objectives and activities aligned with sound pedagogy."
     ],
-    "affiliate_url": "https://ocw.mit.edu/courses/6-006-introduction-to-algorithms-spring-2020/"
+    "affiliate_url": "https://www.unesco.org/en/digital-education/artificial-intelligence"
   },
   {
     "id": "python-fundamentals",
@@ -95,6 +76,44 @@
     "affiliate_url": "https://ocw.mit.edu/courses/6-100l-introduction-to-cs-and-programming-using-python-fall-2022/"
   },
   {
+    "id": "basic-data-manipulation",
+    "title": "Basic Data Manipulation-L",
+    "tagline": "Clean, reshape, and move real-world data using nothing but core Python.",
+    "difficulty": "Beginner",
+    "duration_min": 60,
+    "price_cents": 0,
+    "thumb": "/thumbs/basic-data-manipulation.png",
+    "description": "Basic data manipulation is the everyday work of turning messy, real-world input into clean, structured, usable data using only Python's standard library. This course moves through four core skills. First, processing and cleaning raw text with string slicing and methods such as .strip(), .replace(), .split(), and .join(), then formatting the result with f-strings. Second, organising and filtering ordered data with lists, list comprehensions, .sort() versus sorted(), enumerate(), and zip(). Third, modelling key-value and unique data with dictionaries and sets, including safe lookups with .get() and set operations for deduplication. Fourth, reading from and writing to files safely using the with-open context manager, line-by-line streaming for large files, and comma-separated parsing without any external libraries. Each lesson closes with a hands-on task drawn from authentic data-cleaning work. Sources: Python Software Foundation documentation; MIT OCW 6.100L.",
+    "what_you_learn": [
+      "Clean and normalise raw text using string slicing and methods like .strip(), .replace(), .split(), and .join().",
+      "Filter, sort, and transform lists using comprehensions, .sort() versus sorted(), enumerate(), and zip().",
+      "Model structured data with dictionaries and sets, using .get() for safe lookups and set operations to remove duplicates.",
+      "Read from and write to files safely with the with-open context manager and process large files line by line.",
+      "Parse comma-separated records into structured fields without any external libraries.",
+      "Apply these skills to authentic tasks: cleaning dirty input, filtering scores, counting word frequencies, and summarising a log file."
+    ],
+    "affiliate_url": "https://docs.python.org/3/tutorial/"
+  },
+  {
+    "id": "algorithms-and-data-structures",
+    "title": "Algorithms and Data Structures-L",
+    "tagline": "Learn how computational problems are represented, organized, and solved efficiently.",
+    "difficulty": "Intermediate",
+    "duration_min": 100,
+    "price_cents": 0,
+    "thumb": "/thumbs/algorithms-data-structures.png",
+    "description": "An algorithm is a finite, well-defined sequence of steps for solving a computational problem. A data structure is a scheme for organizing and storing data to enable efficient access and modification. This module introduces arrays, linked lists, stacks, queues, hash tables, binary search trees, heaps, and graphs. Core algorithms include linear search, binary search, merge sort, quicksort, depth-first search, breadth-first search, Dijkstra, and dynamic programming. The module also introduces recursion, divide-and-conquer, greedy algorithms, and Big-O notation. Application tasks require students to trace algorithms, calculate time complexity, and select appropriate data structures for defined scenarios. Sources: MIT OCW 6.006 Introduction to Algorithms, Spring 2020; Cormen et al., Introduction to Algorithms (CLRS), 4th ed., MIT Press, 2022.",
+    "what_you_learn": [
+      "Define core data structures and algorithmic paradigms.",
+      "Interpret Big-O notation for common operations.",
+      "Explain how searching and sorting algorithms operate.",
+      "Compare data structures based on use case and efficiency.",
+      "Trace algorithm execution on sample inputs.",
+      "Choose and apply suitable structures and algorithms to concrete problems."
+    ],
+    "affiliate_url": "https://ocw.mit.edu/courses/6-006-introduction-to-algorithms-spring-2020/"
+  },
+  {
     "id": "machine-learning",
     "title": "Machine Learning-L",
     "tagline": "Understand how systems learn from data to make predictions, decisions, and discoveries.",
@@ -112,6 +131,25 @@
       "Apply model-selection reasoning to practical scenarios."
     ],
     "affiliate_url": "https://cs229.stanford.edu/"
+  },
+  {
+    "id": "generative-ai-and-llms",
+    "title": "Generative AI and Large Language Models-L",
+    "tagline": "Understand how models that generate text and images are trained, steered, and misused.",
+    "difficulty": "Intermediate",
+    "duration_min": 75,
+    "price_cents": 0,
+    "thumb": "/thumbs/generative-ai-llms.png",
+    "description": "Generative AI describes models that learn the distribution of their training data well enough to produce new examples from it, in contrast to discriminative models that only sort existing data into categories. This module surveys four generative families: large language models built on the Transformer decoder, generative adversarial networks, variational autoencoders, and diffusion models. Students learn how autoregressive next-token prediction produces fluent text, and how context window, temperature, and top-p sampling control the output. The three stages that turn a raw model into a usable assistant are treated separately: pre-training, supervised fine-tuning, and reinforcement learning from human feedback. Closing topics: hallucination, training-data bias, retrieval-augmented generation, and model cards. Sources: Vaswani et al. 2017; Brown et al. 2020; Ouyang et al. 2022.",
+    "what_you_learn": [
+      "Define generative AI and distinguish it from discriminative approaches.",
+      "Identify the three LLM training stages and the four major generative model families.",
+      "Explain how next-token prediction, temperature, and top-p shape a model's output.",
+      "Compare zero-shot, few-shot, fine-tuning, and LoRA for adapting a model to a new task.",
+      "Evaluate a model output for hallucination, bias, and potential for misuse.",
+      "Apply chain-of-thought and role prompting to improve results on a reasoning task."
+    ],
+    "affiliate_url": "https://huggingface.co/learn/nlp-course/chapter1"
   },
   {
     "id": "neural-networks-and-deep-learning",
@@ -169,5 +207,81 @@
       "Apply robotic reasoning to real-world operational scenarios."
     ],
     "affiliate_url": "https://standards.ieee.org/initiatives/autonomous-intelligence-systems/"
+  },
+  {
+    "id": "ai-in-society-and-the-future",
+    "title": "AI in Society and the Future-L",
+    "tagline": "Examine how AI is governed, who it displaces, who it enriches, and what comes next.",
+    "difficulty": "Advanced",
+    "duration_min": 90,
+    "price_cents": 0,
+    "thumb": "/thumbs/ai-society-future.png",
+    "description": "AI governance is the set of principles, laws, and institutional practices determining how artificial intelligence may be built and deployed. This module covers the five OECD AI Principles (2019), endorsed by 46 countries, and the five risk tiers of the EU AI Act (2024), from banned uses such as government social scoring through to general-purpose foundation models. Students study labor market effects through Acemoglu and Restrepo's displacement and reinstatement framework, and three mechanisms of power concentration: data monopolies, compute concentration, and surveillance-driven personalization. Long-term safety concepts include AGI, superintelligence, instrumental convergence, and the value alignment problem, alongside current responses: RLHF, constitutional methods, interpretability research, and red-teaming. Sources: OECD AI Principles; EU AI Act; Stanford HAI AI Index Report.",
+    "what_you_learn": [
+      "Define AGI, superintelligence, and alignment as concepts in long-term AI safety.",
+      "Identify the OECD AI Principles and the five EU AI Act risk tiers.",
+      "Explain how misspecified objectives make capable systems behave in unintended ways.",
+      "Compare optimistic and pessimistic projections for AI and labor, and the evidence behind each.",
+      "Evaluate a proposed AI deployment against established risk and principle frameworks.",
+      "Design a governance framework specifying oversight, audit, and redress for a high-stakes system."
+    ],
+    "affiliate_url": "https://oecd.ai/en/ai-principles"
+  },
+  {
+    "id": "html-beginner",
+    "title": "HTML Beginner-L",
+    "tagline": "Write your first real web page using the language every website is built from.",
+    "difficulty": "Beginner",
+    "duration_min": 60,
+    "price_cents": 0,
+    "thumb": "/thumbs/html-beginner.png",
+    "description": "HTML is the markup language that gives a web page its structure and content, working alongside CSS for presentation and JavaScript for behavior. Of the three, only HTML is required: remove the stylesheet and a page is plain but readable, remove the markup and nothing renders. This module starts with the required parts of a valid HTML5 document, then covers the elements students use most: headings, paragraphs, links, images, lists, and the div and span containers. Students learn why block-level and inline elements behave differently, how src and href locate resources, and how nesting produces the DOM tree. Final sections introduce forms and the semantic elements that let screen readers announce page landmarks.",
+    "what_you_learn": [
+      "Define HTML and explain its role alongside CSS and JavaScript.",
+      "Identify the elements required for a valid HTML5 document.",
+      "Explain the difference between block-level and inline elements.",
+      "Compare semantic markup with generic containers and state why the distinction matters.",
+      "Interpret the parent-child relationships that form the DOM tree.",
+      "Apply your knowledge to build a working page and repair broken markup."
+    ],
+    "affiliate_url": "https://web.dev/learn/html"
+  },
+  {
+    "id": "html-intermediate",
+    "title": "HTML Intermediate-L",
+    "tagline": "Build tables, media, and forms that work for every visitor, including those using a screen reader.",
+    "difficulty": "Intermediate",
+    "duration_min": 75,
+    "price_cents": 0,
+    "thumb": "/thumbs/html-intermediate.png",
+    "description": "This module moves from writing valid markup to writing markup that holds up under real use. Students begin with tables as structured data rather than as a layout tool, covering caption, thead, tbody, tfoot, the scope attribute that tells a screen reader which header governs which cell, and colspan and rowspan for merged cells. The media section covers audio, video, and iframe elements, the source element for multiple formats, and the track element supplying the captions WCAG requires. Students then distinguish absolute, root-relative, and relative paths. The accessibility section introduces the ARIA attributes connecting a form field to its hint and its error message. The module closes with data attributes and head metadata.",
+    "what_you_learn": [
+      "Define the structural elements of an HTML table and the purpose of scope and caption.",
+      "Identify HTML5 media elements and the attributes that make them accessible.",
+      "Explain how ARIA roles and labels improve the experience for assistive technology.",
+      "Compare absolute, root-relative, and relative paths and choose correctly between them.",
+      "Interpret how data attributes and head metadata are consumed by scripts and by search engines.",
+      "Apply these techniques to build an accessible table and a correctly labeled form."
+    ],
+    "affiliate_url": "https://developer.mozilla.org/en-US/docs/Learn/HTML/Tables"
+  },
+  {
+    "id": "html-advanced",
+    "title": "HTML Advanced-L",
+    "tagline": "Build reusable components, tune page performance, and audit a site against WCAG 2.1 AA.",
+    "difficulty": "Advanced",
+    "duration_min": 90,
+    "price_cents": 0,
+    "thumb": "/thumbs/html-advanced.png",
+    "description": "This module covers the platform features that let developers extend HTML itself rather than work around it. Students begin with the three Web Components standards: custom elements, the Shadow DOM that isolates a component's styles so neither internal nor external CSS crosses the boundary, and templates with slots for content insertion. The performance section separates srcset for resolution switching from the picture element for art direction, then covers resource hints and their measured effect on Largest Contentful Paint. Students publish structured data using JSON-LD and Schema.org vocabulary. The module closes with a WCAG 2.1 AA audit organized around the POUR principles, and with progressive enhancement as a build order.",
+    "what_you_learn": [
+      "Define custom elements, Shadow DOM, and templates as the Web Components standards.",
+      "Identify the structured data formats that search engines consume, including JSON-LD.",
+      "Explain how Shadow DOM achieves style and script encapsulation.",
+      "Compare srcset and the picture element for responsive images and state when each applies.",
+      "Analyze a page against WCAG 2.1 AA and produce a prioritized remediation plan.",
+      "Apply progressive enhancement to build a form that still works without JavaScript."
+    ],
+    "affiliate_url": "https://developer.mozilla.org/en-US/docs/Web/API/Web_components"
   }
 ]
