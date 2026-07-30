@@ -8,6 +8,10 @@ import incomeData from '../data/income-modules.json';
  * maximisation, why it monetises, community multiplier, the AI basics learned,
  * languages, and any ethical/safety rules and citations. Looked up by slug or
  * numeric id from the bundled data. Verbatim content.
+ *
+ * Repeat modules show a note above the Notes section: module 15 (expands
+ * module 1) gets a short one-line nudge; module 18 (duplicates module 2) gets
+ * the fuller explanation. Both let learners know the repeat is intentional.
  */
 
 export default function IncomeModuleDetail() {
@@ -134,6 +138,47 @@ export default function IncomeModuleDetail() {
         <Section label="Safety rule">
           <p style={{ margin: 0 }}>{module.safety_rule}</p>
         </Section>
+      )}
+
+      {module.id === 15 && (
+        <p
+          className="small"
+          style={{
+            margin: '0 0 var(--space-4)',
+            padding: 'var(--space-3) var(--space-4)',
+            fontStyle: 'italic',
+            color: 'var(--color-text-secondary)',
+            background: 'var(--color-background-secondary)',
+            borderLeft: '3px solid var(--color-success)',
+            borderRadius: '8px'
+          }}
+        >
+          By the way, this repetition is not a mistake. Notice what has changed.
+        </p>
+      )}
+
+      {module.id === 18 && (
+        <div
+          className="card"
+          style={{
+            background: 'var(--color-background-secondary)',
+            borderColor: 'var(--color-success)',
+            marginBottom: 'var(--space-4)'
+          }}
+        >
+          <p
+            className="overline"
+            style={{ marginBottom: 'var(--space-2)', color: 'var(--color-success)' }}
+          >
+            Why is Task 18 the same as Task 2?
+          </p>
+          <p className="small" style={{ margin: 0 }}>
+            You'll notice Task 18 repeats Task 2. That's intentional. Supporting and boosting
+            local economies through community-based efforts is the spine of this programme —
+            it earns its second seat at the table. Read both and notice how the framing shifts
+            from the individual builder to the community multiplier.
+          </p>
+        </div>
       )}
 
       {module.notes && (
