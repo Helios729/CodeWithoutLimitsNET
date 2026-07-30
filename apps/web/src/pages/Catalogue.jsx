@@ -24,23 +24,23 @@ export default function Catalogue() {
 
   return (
     <div className="shell section">
-      <p className="overline">Course Catalogue</p>
+      <p className="overline">Learning Modules Catalogue</p>
       <h1>Start from the Heart</h1>
       <p style={{ maxWidth: 620 }}>
-        Beginner courses assume nothing. Advanced courses assume you have finished the
+        Beginner modules assume nothing. Advanced modules assume you have finished the
         intermediate ones, but nothing is locked.
       </p>
 
       <div className="row" style={{ margin: 'var(--space-6) 0' }} role="search">
         <label className="visually-hidden" htmlFor="catalogue-search">
-          Search courses
+          Search learning modules
         </label>
         <input
           id="catalogue-search"
           className="input"
           style={{ maxWidth: 320 }}
           type="search"
-          placeholder="Search courses"
+          placeholder="Search learning modules"
           value={search}
           onChange={(event) => setSearch(event.target.value)}
         />
@@ -61,12 +61,12 @@ export default function Catalogue() {
 
       <ErrorNotice error={error} onRetry={() => setLevel((l) => l)} />
 
-      {!data && !error && <Loading what="courses" />}
+      {!data && !error && <Loading what="learning modules" />}
 
       {data?.modules?.length === 0 && (
         <div className="notice">
           <p style={{ margin: 0 }}>
-            No courses match that. Clear the search box or pick a different level to see everything.
+            No learning modules match that. Clear the search box or pick a different level to see everything.
           </p>
         </div>
       )}

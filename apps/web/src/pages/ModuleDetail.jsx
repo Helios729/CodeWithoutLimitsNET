@@ -27,7 +27,7 @@ export default function ModuleDetail() {
   }, [moduleId]);
 
   if (error) return <div className="shell section"><ErrorNotice error={error} /></div>;
-  if (!module) return <Loading what="this course" />;
+  if (!module) return <Loading what="this learning module" />;
 
   const completed = module.progress?.completedMiniLessons ?? [];
   const title = module.module_title.replace(/-L$/, '');
@@ -122,7 +122,7 @@ export default function ModuleDetail() {
                 )}
               </>
             ) : (
-              <p className="small muted">The quiz for this course is not published yet.</p>
+              <p className="small muted">The quiz for this learning module is not published yet.</p>
             )}
           </div>
 

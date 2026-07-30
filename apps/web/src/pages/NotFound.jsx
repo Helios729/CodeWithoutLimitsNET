@@ -6,11 +6,11 @@ export default function NotFound() {
       <p className="overline">404</p>
       <h1>That page is not here</h1>
       <p>
-        The link may be out of date, or the course may have been renamed. The catalogue lists
+        The link may be out of date, or the learning module may have been renamed. The catalogue lists
         everything that is published.
       </p>
       <Link to="/courses" className="btn btn-primary">
-        Browse the courses
+        Browse the learning modules
       </Link>
     </div>
   );

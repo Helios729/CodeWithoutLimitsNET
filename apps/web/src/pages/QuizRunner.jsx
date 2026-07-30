@@ -202,7 +202,7 @@ function Results({ moduleId, result }) {
 
       <div className="row" style={{ marginTop: 'var(--space-6)' }}>
         <Link to={`/courses/${moduleId}`} className="btn btn-secondary">
-          Back to the course
+          Back to the learning module
         </Link>
         <Link to="/dashboard" className="btn btn-primary">
           See my learning

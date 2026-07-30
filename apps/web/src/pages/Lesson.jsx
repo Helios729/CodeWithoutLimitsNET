@@ -40,7 +40,7 @@ export default function Lesson() {
       <div className="shell section">
         <div className="notice">
           <h2>This lesson is not open yet</h2>
-          <p>Create a free account to read the whole course and keep your place.</p>
+          <p>Create a free account to read the whole learning module and keep your place.</p>
           <Link to="/sign-up" className="btn btn-primary">
             Create a free account
           </Link>

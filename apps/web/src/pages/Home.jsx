@@ -27,20 +27,20 @@ export default function Home() {
               Learn the tools that let you build what your community needs.
             </h1>
             <p style={{ fontSize: 'var(--type-body-lg)' }}>
-              Ten courses in artificial intelligence, programming and the web. Every explanation is
+              Fifteen learning modules in artificial intelligence, programming and the web. Every explanation is
               tied to a named source you can open for free. Everything works on a slow connection
               and a modest phone.
             </p>
             <div className="row" style={{ marginTop: 'var(--space-6)' }}>
               <Link to="/courses" className="btn btn-primary">
-                Browse the courses
+                Browse the learning modules
               </Link>
               <Link to="/sign-up" className="btn btn-secondary">
                 Create a free account
               </Link>
             </div>
             <p className="small muted" style={{ marginTop: 'var(--space-4)' }}>
-              You can read the first lesson of any course without an account.
+              You can read the first lesson of any learning module without an account.
             </p>
           </div>
         </div>
@@ -53,7 +53,7 @@ export default function Home() {
             <p className="overline">How it works</p>
             <h3>Read, then prove it</h3>
             <p className="small">
-              Each course is four short lessons, each paired with a five-question check. Questions
+              Each learning module is four short lessons, each paired with a five-question check. Questions
               are written across three levels: recall, understanding, and applying the idea to a
               situation you have not seen before.
             </p>

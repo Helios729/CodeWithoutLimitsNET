@@ -36,7 +36,7 @@ export default function Dashboard() {
           <p style={{ fontFamily: 'var(--font-display)', fontSize: 'var(--type-h2)', margin: 0, color: 'var(--color-text-primary)' }}>
             {summary.modulesStarted}
           </p>
-          <p className="small muted" style={{ margin: 0 }}>of {summary.modulesAvailable} courses</p>
+          <p className="small muted" style={{ margin: 0 }}>of {summary.modulesAvailable} learning modules</p>
         </div>
         <div className="card">
           <p className="overline">Completed</p>
@@ -63,12 +63,12 @@ export default function Dashboard() {
         </div>
       </div>
 
-      <h2>Your courses</h2>
+      <h2>Your learning modules</h2>
       {modules.length === 0 ? (
         <div className="notice">
-          <p>Nothing started yet. Pick a course and read the first lesson.</p>
+          <p>Nothing started yet. Pick a learning module and read the first lesson.</p>
           <Link to="/courses" className="btn btn-primary">
-            Browse the courses
+            Browse the learning modules
           </Link>
         </div>
       ) : (
