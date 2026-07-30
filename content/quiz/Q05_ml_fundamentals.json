@@ -1,9 +1,9 @@
 {
-  "module_id": "machine-learning-fundamentals",
-  "module_title": "Machine Learning Fundamentals-Q",
+  "module_id": "machine-learning",
+  "module_title": "Machine Learning-Q",
   "type": "quiz",
   "difficulty": "Beginner",
-  "companion_learning": "Machine Learning Fundamentals-L",
+  "companion_learning": "Machine Learning-L",
   "superquiz_pool": [
     "A",
     "B",

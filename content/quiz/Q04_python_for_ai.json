@@ -1,9 +1,9 @@
 {
-  "module_id": "python-for-ai",
-  "module_title": "Python for AI-Q",
+  "module_id": "python-fundamentals",
+  "module_title": "Python-Q",
   "type": "quiz",
   "difficulty": "Beginner",
-  "companion_learning": "Python for AI-L",
+  "companion_learning": "Python-L",
   "superquiz_pool": [
     "A",
     "B",
