@@ -1,7 +1,7 @@
 # Code Without Limits
 
-Dual-platform learning asset for **codewithoutlimits.net**: a React website on Netlify, an Expo
-app for iOS and Android, and a shared Express + MongoDB API on Railway. All three consume one
+Dual-platform learning asset for **codewithoutlimits.net**: a React website on Render, an Expo
+app for iOS and Android, and a shared Express + MongoDB API on Render. All three consume one
 design-token package, so the brand is defined once and re-themed by swapping values rather than
 rewriting components.
 
@@ -12,14 +12,14 @@ A programme of Mondial Connections and Community Changers.
 ```
 packages/tokens/     Desert Modernism design tokens (single source of truth)
 apps/api/            Express + Mongoose API            -> Railway
-apps/web/            React + Vite website              -> Netlify
+apps/web/            React + Vite website              -> Render
 apps/mobile/         Expo app for iOS and Android      -> EAS Build
 content/             Authored lesson and quiz JSON     -> ingested into MongoDB
 ```
 
 ## Prerequisites
 
-Node 20 or newer, npm 10 or newer, and a MongoDB instance (local, Atlas, or the Railway MongoDB
+Node 20 or newer, npm 10 or newer, and a MongoDB instance (local, Atlas, or the Render MongoDB
 plugin).
 
 ## Getting started
@@ -121,5 +121,5 @@ file currently in `content/`.
 
 ## Deployment
 
-See `DEPLOYMENT.md` for Railway, Netlify, MongoDB Atlas and DNS. See `SECURITY.md` for the threat
+See `DEPLOYMENT.md` for Render,MongoDB Atlas and DNS. See `SECURITY.md` for the threat
 model and the reasoning behind each control.
