@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "private": true,
   "description": "Code Without Limits - dual-platform learning asset (codewithoutlimits.net)",
-  "license": "UNLICENSED",
+  "license": "MIT",
+  "author": "Carline Romain for Mondial Connections and Community Changers Foundations <cromain@communitychangers.us>",
   "workspaces": [
     "packages/*",
     "apps/api",
